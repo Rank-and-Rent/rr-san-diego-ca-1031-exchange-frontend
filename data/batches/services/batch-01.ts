@@ -1,0 +1,425 @@
+export const servicesBatch01 = {
+  "forward-exchange": {
+    layoutKey: "classic",
+    mainDescription: "<p>A forward exchange, also known as a delayed exchange, is the most common type of 1031 exchange structure. This approach is ideal for property owners in San Diego, CA who need to sell their relinquished property first and then identify and acquire replacement property within specific deadlines. The forward exchange process begins when you sell your current investment property. Sale proceeds are held by a Qualified Intermediary in a qualified escrow account to ensure compliance with IRS requirements. You then have forty five days from the sale date to identify potential replacement properties and one hundred eighty days total to complete the acquisition of your replacement property. This structure provides flexibility for property owners who have not yet identified their replacement property at the time of sale. The Qualified Intermediary manages all exchange funds and coordinates the transfer to ensure your exchange remains compliant. Forward exchanges work well when you need time to evaluate replacement property options or when market conditions require selling before buying. This approach allows you to defer capital gains taxes while transitioning your real estate investment portfolio.</p>",
+    faqs: [
+      {
+        question: "What are the identification rules for a forward exchange in San Diego, CA?",
+        answer: "In San Diego, CA, forward exchange identification rules require you to identify potential replacement properties in writing within forty five days of selling your relinquished property. You can identify up to three properties of any value, or more than three properties if their combined value does not exceed two hundred percent of the relinquished property value. The identification must be delivered to the Qualified Intermediary or other party involved in the exchange by midnight on the forty fifth day. This written identification is a critical compliance requirement that cannot be extended.",
+      },
+      {
+        question: "How does boot work in a forward exchange in San Diego, CA?",
+        answer: "Boot in a forward exchange in San Diego, CA refers to any non like kind property or cash you receive that is not reinvested into replacement property. If you receive cash from the sale that exceeds the amount needed to purchase replacement property, that excess cash is considered boot and may be taxable. Similarly, if you receive personal property or other non qualifying assets, those are boot. To avoid boot, you must reinvest all net proceeds and acquire replacement property of equal or greater value. Any boot received is subject to capital gains tax and depreciation recapture.",
+      },
+      {
+        question: "What happens if I cannot find replacement property within the deadlines in San Diego, CA?",
+        answer: "If you cannot identify or acquire replacement property within the required deadlines in San Diego, CA, your exchange will fail and you will be required to pay capital gains taxes on the sale proceeds. The forty five day identification deadline and one hundred eighty day acquisition deadline are strict IRS requirements with very limited exceptions. This is why working with experienced professionals who can help identify suitable replacement properties nationwide is important. We can help you explore single tenant net lease properties and other qualifying replacement options to meet your deadlines.",
+      },
+      {
+        question: "Can I use a forward exchange for multiple replacement properties in San Diego, CA?",
+        answer: "Yes, in San Diego, CA you can acquire multiple replacement properties in a forward exchange as long as you follow the identification rules. You can identify up to three properties of any value, or more properties if their combined value does not exceed two hundred percent of your relinquished property value. All identified properties must be acquired within the one hundred eighty day deadline. This flexibility allows you to diversify your investment portfolio or acquire properties that better match your investment goals.",
+      },
+      {
+        question: "What role does the Qualified Intermediary play in a forward exchange in San Diego, CA?",
+        answer: "The Qualified Intermediary in San Diego, CA serves as an independent third party who holds your exchange proceeds in a qualified escrow account and facilitates the transfer to complete your replacement property acquisition. The Qualified Intermediary ensures you never have actual or constructive receipt of the funds, which is required for exchange compliance. They prepare exchange documentation, coordinate with escrow, and ensure all transactions meet IRS requirements. Working with a reputable Qualified Intermediary is essential for maintaining exchange compliance.",
+      },
+    ],
+    inclusions: [
+      "Nationwide replacement property identification services",
+      "Qualified Intermediary coordination and documentation",
+      "Qualified escrow account setup and management",
+      "Forty five day identification deadline tracking and reminders",
+      "One hundred eighty day acquisition deadline monitoring",
+      "Exchange documentation preparation and compliance review",
+      "Coordination with title companies and escrow officers",
+      "Guidance on identification rules and property selection",
+    ],
+    commonSituations: [
+      "A property owner in San Diego sells a commercial building and needs time to identify suitable single tenant net lease replacement properties across multiple markets.",
+      "An investor completes the sale of rental property and wants to explore retail property options before committing to a replacement property purchase.",
+      "A real estate owner sells property in a hot market and needs the forward exchange structure to defer taxes while searching for replacement properties in different geographic areas.",
+    ],
+    complianceNote: "Educational content only. Not tax, legal, or investment advice. A 1031 exchange defers income tax on qualifying real property and does not remove transfer or documentary taxes.",
+    exampleCapability: {
+      disclaimer: "Example of the type of engagement we can handle",
+      serviceType: "Forward Exchange",
+      location: "San Diego, CA",
+      scope: "Coordinate a forward exchange for a commercial property owner selling a multi tenant office building valued at two point five million dollars and seeking single tenant net lease replacement properties.",
+      clientSituation: "The client needs to sell their current property quickly due to tenant lease expirations but has not yet identified replacement properties. They want to defer capital gains taxes and transition to NNN properties for passive income.",
+      ourApproach: "We coordinate with a Qualified Intermediary to establish qualified escrow, provide nationwide property identification services to locate suitable NNN retail properties, track all deadlines, and ensure compliance with forty five day identification and one hundred eighty day acquisition requirements.",
+      expectedOutcome: "The client successfully identifies three potential replacement properties within forty five days, acquires two single tenant net lease properties within one hundred eighty days, and defers capital gains taxes on the exchange.",
+      contactCTA: "Contact us to discuss your situation in San Diego, CA. We can share references upon request.",
+    },
+  },
+  "reverse-exchange": {
+    layoutKey: "sidebar",
+    mainDescription: "<p>A reverse exchange, also called a reverse Starker exchange, allows you to acquire replacement property before selling your relinquished property. This structure is valuable for property owners in San Diego, CA who have identified an ideal replacement property but have not yet sold their current property. Reverse exchanges require an Exchange Accommodation Titleholder, often called an EAT, to hold title to either the relinquished or replacement property while the exchange is completed. The EAT purchases and holds the replacement property using exchange funds, then transfers it to you once your relinquished property sells. Alternatively, the EAT can hold your relinquished property while you acquire the replacement property directly. Reverse exchanges must follow strict timing requirements. You have forty five days from when the EAT acquires the property to identify your relinquished property if the EAT holds the replacement property. You then have one hundred eighty days total to complete the sale of your relinquished property and finalize the exchange. This structure requires coordination with a Qualified Intermediary and qualified escrow services to ensure compliance. Reverse exchanges are more complex than forward exchanges and involve additional costs, but they provide flexibility when timing is critical.</p>",
+    faqs: [
+      {
+        question: "What are the identification requirements for a reverse exchange in San Diego, CA?",
+        answer: "In San Diego, CA, reverse exchange identification requirements depend on which property the Exchange Accommodation Titleholder holds. If the EAT holds your replacement property, you must identify your relinquished property in writing within forty five days of the EAT acquiring the replacement property. If the EAT holds your relinquished property, you must identify replacement properties within forty five days of the EAT acquiring your relinquished property. The identification must follow standard rules allowing up to three properties of any value, or more properties if their combined value does not exceed two hundred percent of the property value.",
+      },
+      {
+        question: "What is boot in a reverse exchange in San Diego, CA?",
+        answer: "Boot in a reverse exchange in San Diego, CA occurs if you receive cash or other non like kind property that is not properly reinvested. If the replacement property value is less than your relinquished property value, the difference may be boot. Similarly, if you use personal funds beyond what is needed for the exchange, that could create boot. To avoid boot, ensure the replacement property value equals or exceeds your relinquished property value and that all exchange proceeds are properly used. Any boot received may be subject to capital gains tax.",
+      },
+      {
+        question: "How long do I have to complete a reverse exchange in San Diego, CA?",
+        answer: "In San Diego, CA, reverse exchanges must be completed within one hundred eighty days of the Exchange Accommodation Titleholder acquiring the property they hold. This deadline cannot be extended, even if it falls on a weekend or holiday. The timeline includes both the forty five day identification period and the remaining time to complete the sale and transfer. This strict deadline requires careful planning and coordination with all parties involved in the transaction.",
+      },
+      {
+        question: "What is an Exchange Accommodation Titleholder in San Diego, CA?",
+        answer: "An Exchange Accommodation Titleholder in San Diego, CA is a qualified entity that temporarily holds title to either your relinquished or replacement property during a reverse exchange. The EAT must be independent and cannot be you, a disqualified person, or your agent. The EAT purchases and holds the property using exchange funds, then transfers it to complete the exchange. This structure allows you to acquire replacement property before selling your relinquished property, providing flexibility when timing is critical.",
+      },
+      {
+        question: "Are reverse exchanges more expensive than forward exchanges in San Diego, CA?",
+        answer: "Yes, reverse exchanges in San Diego, CA typically involve additional costs compared to forward exchanges. These costs include fees for the Exchange Accommodation Titleholder, additional legal and documentation expenses, and potentially higher interest costs if the EAT uses financing to acquire the property. However, the added flexibility and ability to secure replacement property before selling can be valuable when market conditions or specific property opportunities make timing critical.",
+      },
+      {
+        question: "Can I use a reverse exchange if I have already identified replacement property in San Diego, CA?",
+        answer: "Yes, reverse exchanges in San Diego, CA are specifically designed for situations where you have identified replacement property but have not yet sold your relinquished property. This structure allows you to secure the replacement property immediately while you work to sell your current property. The Exchange Accommodation Titleholder holds the replacement property until your sale closes, then transfers it to complete your exchange. This approach protects you from losing a desirable replacement property opportunity.",
+      },
+    ],
+    inclusions: [
+      "Exchange Accommodation Titleholder coordination and setup",
+      "Qualified Intermediary services and documentation",
+      "Qualified escrow account establishment",
+      "Forty five day identification deadline tracking",
+      "One hundred eighty day completion deadline monitoring",
+      "Reverse exchange documentation and compliance review",
+      "Coordination with title companies and escrow",
+      "Guidance on EAT structure and requirements",
+    ],
+    commonSituations: [
+      "A property owner in San Diego finds an ideal single tenant net lease property that will sell quickly and needs to secure it before their current property closes.",
+      "An investor identifies a prime retail property opportunity but their relinquished property sale is delayed, requiring a reverse exchange structure to preserve the opportunity.",
+      "A real estate owner wants to acquire replacement property in a competitive market where properties sell quickly and cannot wait for their current property to close first.",
+    ],
+    complianceNote: "Educational content only. Not tax, legal, or investment advice. A 1031 exchange defers income tax on qualifying real property and does not remove transfer or documentary taxes.",
+    exampleCapability: {
+      disclaimer: "Example of the type of engagement we can handle",
+      serviceType: "Reverse Exchange",
+      location: "San Diego, CA",
+      scope: "Coordinate a reverse exchange for an investor who has identified a single tenant pharmacy property but needs to sell their current multi tenant retail building first.",
+      clientSituation: "The client found a desirable NNN pharmacy property that will likely sell to another buyer if not secured immediately. Their current property is under contract but closing is delayed, and they want to ensure they can complete their exchange.",
+      ourApproach: "We coordinate with an Exchange Accommodation Titleholder to acquire and hold the replacement pharmacy property, establish qualified escrow, track all deadlines, and ensure compliance with reverse exchange requirements while the client completes the sale of their relinquished property.",
+      expectedOutcome: "The EAT secures the replacement property, the client completes the sale of their relinquished property within the one hundred eighty day deadline, and the exchange is completed with full tax deferral.",
+      contactCTA: "Contact us to discuss your situation in San Diego, CA. We can share references upon request.",
+    },
+  },
+  "simultaneous-exchange": {
+    layoutKey: "minimal",
+    mainDescription: "<p>A simultaneous exchange occurs when you sell your relinquished property and acquire your replacement property on the same day. This structure is ideal for property owners in San Diego, CA who have already identified their replacement property and can coordinate both closings to occur simultaneously. Simultaneous exchanges require careful coordination between all parties, including sellers, buyers, title companies, escrow officers, and a Qualified Intermediary. The Qualified Intermediary receives proceeds from your sale and immediately transfers them to complete your replacement property purchase, all within the same transaction day. This structure eliminates the need for the forty five day identification period and one hundred eighty day acquisition timeline since both transactions complete together. Simultaneous exchanges can be simpler than delayed exchanges because there is no gap period between sale and purchase. However, they require precise timing and coordination to ensure both closings occur on the same day. Qualified escrow services manage the fund transfers to ensure compliance. This approach works well when you have a ready buyer for your property and have already identified and secured your replacement property.</p>",
+    faqs: [
+      {
+        question: "Do simultaneous exchanges have identification deadlines in San Diego, CA?",
+        answer: "No, simultaneous exchanges in San Diego, CA do not have the forty five day identification deadline or one hundred eighty day acquisition deadline because both the sale and purchase occur on the same day. Since you are completing both transactions simultaneously, the identification and acquisition happen together. However, you must still ensure your replacement property qualifies as like kind property and meets all other exchange requirements.",
+      },
+      {
+        question: "What happens if there is boot in a simultaneous exchange in San Diego, CA?",
+        answer: "If you receive boot in a simultaneous exchange in San Diego, CA, such as cash that exceeds what you need for the replacement property purchase, that boot amount may be taxable. Boot can also occur if the replacement property value is less than your relinquished property value and you receive cash back. To avoid boot, ensure your replacement property value equals or exceeds your relinquished property value and that all net proceeds are reinvested. The Qualified Intermediary can help structure the transaction to minimize boot.",
+      },
+      {
+        question: "What happens if the closings do not occur on the same day in San Diego, CA?",
+        answer: "If the closings do not occur on the same day in San Diego, CA, your transaction becomes a delayed exchange rather than a simultaneous exchange. This means you must follow the forty five day identification and one hundred eighty day acquisition deadlines. Even a one day gap requires following delayed exchange rules. This is why precise coordination and having backup plans are important for simultaneous exchanges.",
+      },
+      {
+        question: "Can I do a simultaneous exchange with multiple replacement properties in San Diego, CA?",
+        answer: "Yes, in San Diego, CA you can complete a simultaneous exchange involving multiple replacement properties as long as all closings occur on the same day. The Qualified Intermediary coordinates the fund distribution to acquire all replacement properties simultaneously. All replacement properties must qualify as like kind property, and the combined value should equal or exceed your relinquished property value to avoid boot.",
+      },
+    ],
+    inclusions: [
+      "Qualified Intermediary coordination for same day closings",
+      "Qualified escrow services and fund management",
+      "Transaction timing coordination with all parties",
+      "Exchange documentation preparation",
+      "Compliance review for simultaneous exchange structure",
+      "Coordination with title companies and escrow officers",
+      "Backup planning if same day closing cannot be achieved",
+    ],
+    commonSituations: [
+      "A property owner in San Diego has both properties under contract with closing dates scheduled for the same day and needs coordination to ensure exchange compliance.",
+      "An investor selling a commercial property has already identified and secured a single tenant net lease replacement property and wants to complete both transactions simultaneously.",
+      "A real estate owner coordinates the sale of one property and purchase of another with the same closing date to simplify the exchange process.",
+    ],
+    complianceNote: "Educational content only. Not tax, legal, or investment advice. A 1031 exchange defers income tax on qualifying real property and does not remove transfer or documentary taxes.",
+    exampleCapability: {
+      disclaimer: "Example of the type of engagement we can handle",
+      serviceType: "Simultaneous Exchange",
+      location: "San Diego, CA",
+      scope: "Coordinate a simultaneous exchange for a property owner selling a retail building and acquiring a single tenant net lease convenience store property, with both closings scheduled for the same day.",
+      clientSituation: "The client has both properties under contract with closing dates set for the same day. They want to ensure proper exchange structure and compliance while completing both transactions simultaneously.",
+      ourApproach: "We coordinate with a Qualified Intermediary to manage the fund transfer, work with both title companies to ensure same day closing, prepare all exchange documentation, and verify compliance with simultaneous exchange requirements.",
+      expectedOutcome: "Both transactions close on the same day, exchange proceeds are properly transferred through qualified escrow, and the client successfully defers capital gains taxes on the exchange.",
+      contactCTA: "Contact us to discuss your situation in San Diego, CA. We can share references upon request.",
+    },
+  },
+  "delayed-exchange": {
+    layoutKey: "detailed",
+    mainDescription: "<p>A delayed exchange, also called a forward exchange or Starker exchange, is the most common 1031 exchange structure. This approach allows property owners in San Diego, CA to sell their relinquished property first, then identify and acquire replacement property within specific IRS deadlines. The delayed exchange process begins when you close on the sale of your current investment property. All sale proceeds are transferred to a Qualified Intermediary who holds the funds in a qualified escrow account. You then have exactly forty five days from the sale closing date to identify potential replacement properties in writing. This identification must be delivered to the Qualified Intermediary or other party involved in the exchange by midnight on the forty fifth day. After identification, you have a total of one hundred eighty days from the sale date to complete the acquisition of your replacement property. The Qualified Intermediary coordinates the fund transfer from qualified escrow to complete your replacement property purchase. This structure provides flexibility for property owners who need time to evaluate replacement property options or who have not yet identified suitable properties at the time of sale. Delayed exchanges work well when you need to sell quickly but want time to find the right replacement property investment.</p>",
+    faqs: [
+      {
+        question: "What are the identification rules for a delayed exchange in San Diego, CA?",
+        answer: "In San Diego, CA, delayed exchange identification rules require written identification of replacement properties within forty five days of selling your relinquished property. You can identify up to three properties of any value, or more than three properties if their combined value does not exceed two hundred percent of your relinquished property value. The identification must include specific property descriptions and be delivered to the Qualified Intermediary or other party by midnight on the forty fifth day. This deadline is strict and cannot be extended except in very limited disaster related circumstances.",
+      },
+      {
+        question: "How is boot calculated in a delayed exchange in San Diego, CA?",
+        answer: "Boot in a delayed exchange in San Diego, CA is calculated as any cash or non like kind property you receive that is not reinvested into replacement property. If your replacement property costs less than your net sale proceeds, the difference is boot. If you receive personal property or other assets that are not like kind, those are boot. Mortgage boot occurs if your replacement property debt is less than your relinquished property debt. To avoid boot, ensure your replacement property value equals or exceeds your relinquished property value and that all net proceeds are reinvested.",
+      },
+      {
+        question: "What happens if I miss the forty five day identification deadline in San Diego, CA?",
+        answer: "If you miss the forty five day identification deadline in San Diego, CA, your exchange will fail and you will be required to pay capital gains taxes on your sale proceeds. The forty five day deadline is a strict IRS requirement with very limited exceptions. This is why working with professionals who can help identify suitable replacement properties and ensure timely identification is critical. We provide nationwide property identification services to help you meet this deadline.",
+      },
+      {
+        question: "Can I change my identified properties in a delayed exchange in San Diego, CA?",
+        answer: "In San Diego, CA, you generally cannot change your identified properties after the forty five day deadline passes. However, if you identified three or fewer properties, you can choose which of those identified properties to actually acquire. If you identified more than three properties under the two hundred percent rule, you must acquire enough properties to meet that value threshold. This is why careful property identification is important during the forty five day period.",
+      },
+      {
+        question: "What is the one hundred eighty day deadline in a delayed exchange in San Diego, CA?",
+        answer: "The one hundred eighty day deadline in San Diego, CA is the maximum time you have from the sale of your relinquished property to complete the acquisition of your replacement property. This includes the forty five day identification period, so you effectively have one hundred thirty five days after identification to close on replacement property. This deadline cannot be extended except in very limited disaster related circumstances. The Qualified Intermediary tracks this deadline and coordinates closing to ensure compliance.",
+      },
+      {
+        question: "Do I need a Qualified Intermediary for a delayed exchange in San Diego, CA?",
+        answer: "Yes, a Qualified Intermediary is required for delayed exchanges in San Diego, CA. The Qualified Intermediary holds your exchange proceeds in qualified escrow, ensures you do not have actual or constructive receipt of funds, prepares exchange documentation, and coordinates the fund transfer to complete your replacement property purchase. Working with a reputable Qualified Intermediary is essential for maintaining exchange compliance and avoiding tax liability.",
+      },
+    ],
+    inclusions: [
+      "Nationwide replacement property identification assistance",
+      "Qualified Intermediary coordination and setup",
+      "Qualified escrow account establishment and management",
+      "Forty five day identification deadline tracking and reminders",
+      "One hundred eighty day acquisition deadline monitoring",
+      "Exchange documentation preparation and compliance review",
+      "Coordination with title companies and escrow officers",
+      "Guidance on identification rules and property selection strategies",
+    ],
+    commonSituations: [
+      "A property owner in San Diego sells a commercial building and needs the delayed exchange structure to have time to identify and evaluate single tenant net lease replacement properties across multiple markets.",
+      "An investor completes the sale of rental property and wants to explore various retail property options before committing to a replacement property purchase, requiring the flexibility of delayed exchange timing.",
+      "A real estate owner sells property in a strong market and needs the delayed exchange approach to defer taxes while searching for replacement properties in different geographic areas or property types.",
+    ],
+    complianceNote: "Educational content only. Not tax, legal, or investment advice. A 1031 exchange defers income tax on qualifying real property and does not remove transfer or documentary taxes.",
+    exampleCapability: {
+      disclaimer: "Example of the type of engagement we can handle",
+      serviceType: "Delayed Exchange",
+      location: "San Diego, CA",
+      scope: "Coordinate a delayed exchange for a commercial property owner selling a multi tenant retail center valued at three million dollars and seeking single tenant net lease replacement properties nationwide.",
+      clientSituation: "The client needs to sell their current property due to management challenges but has not yet identified replacement properties. They want to defer capital gains taxes and transition to passive NNN investments but need time to evaluate options.",
+      ourApproach: "We coordinate with a Qualified Intermediary to establish qualified escrow, provide comprehensive nationwide property identification services to locate suitable NNN retail properties, track all deadlines with regular reminders, and ensure compliance with forty five day identification and one hundred eighty day acquisition requirements.",
+      expectedOutcome: "The client successfully identifies three potential replacement properties within forty five days, acquires two single tenant net lease properties within one hundred eighty days, and defers capital gains taxes on the entire exchange transaction.",
+      contactCTA: "Contact us to discuss your situation in San Diego, CA. We can share references upon request.",
+    },
+  },
+  "build-to-suit-exchange": {
+    layoutKey: "focused",
+    mainDescription: "<p>A build to suit exchange allows you to exchange into replacement property that will be constructed or significantly improved as part of your exchange transaction. This structure is valuable for property owners in San Diego, CA who want to acquire property that meets specific requirements or who want to develop property as part of their exchange. In a build to suit exchange, you identify replacement property that will be built or improved, and exchange proceeds are used to fund the construction or improvements. The property must be substantially completed within the one hundred eighty day exchange deadline, which requires careful planning and coordination. The build to suit structure allows you to use exchange funds for construction costs, land acquisition, and improvements. You work with developers, contractors, and a Qualified Intermediary to coordinate the construction timeline with exchange deadlines. Qualified escrow services manage the exchange funds and construction disbursements. This approach requires ensuring the property will be substantially complete within one hundred eighty days of your relinquished property sale. Build to suit exchanges work well when you have specific property requirements or want to create value through development as part of your exchange strategy.</p>",
+    faqs: [
+      {
+        question: "What are the identification requirements for a build to suit exchange in San Diego, CA?",
+        answer: "In San Diego, CA, build to suit exchange identification requirements follow standard rules. You must identify the property to be built or improved in writing within forty five days of selling your relinquished property. The identification should describe the property location and the improvements to be made. You can identify up to three build to suit properties of any value, or more properties if their combined value does not exceed two hundred percent of your relinquished property value. The identification must be delivered by the forty fifth day deadline.",
+      },
+      {
+        question: "How does boot work in a build to suit exchange in San Diego, CA?",
+        answer: "Boot in a build to suit exchange in San Diego, CA occurs if the completed property value is less than your net exchange proceeds, or if you receive cash or other non like kind property. To avoid boot, ensure the total cost of land acquisition and construction equals or exceeds your net sale proceeds. Any unused exchange funds that are returned to you are boot and may be taxable. The Qualified Intermediary coordinates fund disbursements to ensure all exchange proceeds are properly used for qualifying costs.",
+      },
+      {
+        question: "What does substantially complete mean in a build to suit exchange in San Diego, CA?",
+        answer: "Substantially complete in San Diego, CA means the replacement property must be ready for its intended use within the one hundred eighty day exchange deadline. The property does not need to be one hundred percent finished, but it must be sufficiently complete that it can be used for its intended purpose. Minor finishing work can continue after the exchange closes, but the core structure and functionality must be substantially complete. This standard requires careful construction planning and timeline management.",
+      },
+      {
+        question: "Can I use build to suit exchange funds for land only in San Diego, CA?",
+        answer: "In San Diego, CA, you generally cannot use build to suit exchange funds for land acquisition only without construction or improvements. The property must be substantially improved or constructed to qualify. However, if you acquire land and begin substantial improvements within the exchange period, that can qualify. The key is that the replacement property must be substantially complete and ready for use within the one hundred eighty day deadline, not just raw land.",
+      },
+      {
+        question: "What happens if construction is not complete within one hundred eighty days in San Diego, CA?",
+        answer: "If construction is not substantially complete within one hundred eighty days in San Diego, CA, your exchange may fail and you could be required to pay capital gains taxes. The one hundred eighty day deadline is strict and cannot be extended except in very limited disaster related circumstances. This is why build to suit exchanges require careful planning, realistic timelines, and coordination with experienced contractors who can guarantee completion within the deadline.",
+      },
+    ],
+    inclusions: [
+      "Build to suit property identification and evaluation",
+      "Qualified Intermediary coordination for construction disbursements",
+      "Qualified escrow services for exchange and construction funds",
+      "Construction timeline coordination with exchange deadlines",
+      "Forty five day identification deadline tracking",
+      "One hundred eighty day completion deadline monitoring",
+      "Exchange documentation preparation and compliance review",
+      "Coordination with developers, contractors, and title companies",
+    ],
+    commonSituations: [
+      "A property owner in San Diego wants to exchange into a single tenant net lease property that needs to be constructed to meet specific tenant requirements.",
+      "An investor sells a property and wants to use exchange proceeds to develop a new retail property with a build to suit structure for a national tenant.",
+      "A real estate owner identifies land and wants to construct improvements as part of their exchange to create a custom replacement property investment.",
+    ],
+    complianceNote: "Educational content only. Not tax, legal, or investment advice. A 1031 exchange defers income tax on qualifying real property and does not remove transfer or documentary taxes.",
+    exampleCapability: {
+      disclaimer: "Example of the type of engagement we can handle",
+      serviceType: "Build to Suit Exchange",
+      location: "San Diego, CA",
+      scope: "Coordinate a build to suit exchange for a property owner selling a commercial building and acquiring land to construct a single tenant net lease retail property for a national tenant.",
+      clientSituation: "The client has sold their property and identified a land parcel where they want to construct a build to suit retail property. They need to ensure the construction timeline aligns with exchange deadlines and that all exchange proceeds are properly used for qualifying costs.",
+      ourApproach: "We coordinate with a Qualified Intermediary to manage exchange funds, work with the developer and contractor to ensure construction can be substantially completed within one hundred eighty days, track all deadlines, and coordinate fund disbursements for land acquisition and construction costs.",
+      expectedOutcome: "The client acquires the land, construction is substantially completed within the one hundred eighty day deadline, exchange proceeds are properly used for qualifying costs, and the exchange is completed with full tax deferral.",
+      contactCTA: "Contact us to discuss your situation in San Diego, CA. We can share references upon request.",
+    },
+  },
+  "improvement-exchange": {
+    layoutKey: "comprehensive",
+    mainDescription: "<p>An improvement exchange, also called a construction or improvement exchange, allows you to use exchange proceeds to make improvements to replacement property as part of your 1031 exchange. This structure is valuable for property owners in San Diego, CA who want to acquire replacement property and enhance its value through improvements or renovations. In an improvement exchange, you identify replacement property that you will improve, and exchange proceeds are used to fund the improvements. The improvements must be substantially complete within the one hundred eighty day exchange deadline. You can use exchange funds for property improvements, renovations, repairs, and other qualifying costs that enhance the property value. The improvement exchange structure requires coordination with contractors, a Qualified Intermediary, and qualified escrow services to manage fund disbursements and ensure compliance. The property must be substantially improved and ready for its intended use within one hundred eighty days of your relinquished property sale. This approach allows you to create value through improvements while deferring taxes. Improvement exchanges work well when you want to acquire property and make it more valuable or suitable for your investment goals as part of a single exchange transaction.</p>",
+    faqs: [
+      {
+        question: "What types of improvements qualify in an improvement exchange in San Diego, CA?",
+        answer: "In San Diego, CA, qualifying improvements in an improvement exchange include renovations, repairs, additions, and other enhancements that increase the property value and are substantially complete within the exchange deadline. Improvements must be permanent and part of the real property, not personal property or equipment. Examples include building renovations, roof replacement, HVAC upgrades, parking lot improvements, and structural additions. The improvements must be substantially complete within one hundred eighty days of your relinquished property sale.",
+      },
+      {
+        question: "How is boot calculated in an improvement exchange in San Diego, CA?",
+        answer: "Boot in an improvement exchange in San Diego, CA is calculated as any exchange proceeds not used for qualifying improvements or any cash you receive back. If the total of your replacement property purchase price plus improvement costs is less than your net exchange proceeds, the difference is boot. To avoid boot, ensure the combined cost of property acquisition and improvements equals or exceeds your net sale proceeds. Any unused exchange funds returned to you are boot and may be taxable.",
+      },
+      {
+        question: "What are the identification rules for an improvement exchange in San Diego, CA?",
+        answer: "In San Diego, CA, improvement exchange identification rules require you to identify the replacement property to be improved in writing within forty five days of selling your relinquished property. The identification should describe the property and the planned improvements. You can identify up to three properties of any value, or more properties if their combined value including improvements does not exceed two hundred percent of your relinquished property value. The identification must be delivered by the forty fifth day deadline.",
+      },
+      {
+        question: "Can I do improvements after the exchange closes in San Diego, CA?",
+        answer: "In San Diego, CA, improvements must be substantially complete within the one hundred eighty day exchange deadline to qualify for the improvement exchange structure. Minor finishing work can continue after closing, but the core improvements must be substantially complete and the property must be ready for its intended use within the deadline. Improvements completed after the exchange closes cannot be funded with exchange proceeds and do not count toward meeting the exchange requirements.",
+      },
+      {
+        question: "What happens if improvements are not complete within one hundred eighty days in San Diego, CA?",
+        answer: "If improvements are not substantially complete within one hundred eighty days in San Diego, CA, your exchange may fail and you could be required to pay capital gains taxes on unused exchange proceeds. The one hundred eighty day deadline is strict and cannot be extended except in very limited disaster related circumstances. This is why improvement exchanges require careful planning, realistic improvement timelines, and coordination with contractors who can guarantee completion within the deadline.",
+      },
+      {
+        question: "Can I use improvement exchange funds for property acquisition and improvements in San Diego, CA?",
+        answer: "Yes, in San Diego, CA you can use improvement exchange funds for both property acquisition and improvements. The total of your property purchase price plus improvement costs must equal or exceed your net exchange proceeds to avoid boot. The Qualified Intermediary coordinates fund disbursements for both acquisition and improvement costs, ensuring all exchange proceeds are properly used for qualifying expenses within the exchange timeline.",
+      },
+    ],
+    inclusions: [
+      "Improvement property identification and evaluation",
+      "Qualified Intermediary coordination for improvement fund disbursements",
+      "Qualified escrow services for exchange and improvement funds",
+      "Improvement timeline coordination with exchange deadlines",
+      "Forty five day identification deadline tracking",
+      "One hundred eighty day completion deadline monitoring",
+      "Exchange documentation preparation and compliance review",
+      "Coordination with contractors, title companies, and escrow officers",
+    ],
+    commonSituations: [
+      "A property owner in San Diego acquires replacement property that needs significant renovations to meet their investment criteria and wants to fund improvements with exchange proceeds.",
+      "An investor purchases a property that requires upgrades to attract better tenants and wants to complete improvements as part of their exchange transaction.",
+      "A real estate owner buys replacement property and wants to make substantial improvements to increase property value while deferring taxes on the entire transaction.",
+    ],
+    complianceNote: "Educational content only. Not tax, legal, or investment advice. A 1031 exchange defers income tax on qualifying real property and does not remove transfer or documentary taxes.",
+    exampleCapability: {
+      disclaimer: "Example of the type of engagement we can handle",
+      serviceType: "Improvement Exchange",
+      location: "San Diego, CA",
+      scope: "Coordinate an improvement exchange for a property owner selling a commercial building and acquiring a retail property that requires significant renovations to meet single tenant net lease standards.",
+      clientSituation: "The client has identified a replacement property at a good price but it needs substantial improvements including roof replacement, HVAC upgrades, and parking lot repairs. They want to use exchange proceeds to fund these improvements as part of their exchange.",
+      ourApproach: "We coordinate with a Qualified Intermediary to manage exchange funds, work with contractors to ensure improvements can be substantially completed within one hundred eighty days, track all deadlines, and coordinate fund disbursements for both property acquisition and improvement costs.",
+      expectedOutcome: "The client acquires the replacement property, improvements are substantially completed within the one hundred eighty day deadline, all exchange proceeds are properly used for qualifying costs, and the exchange is completed with full tax deferral.",
+      contactCTA: "Contact us to discuss your situation in San Diego, CA. We can share references upon request.",
+    },
+  },
+  "multi-property-exchange": {
+    layoutKey: "classic",
+    mainDescription: "<p>A multi property exchange allows you to exchange one or more relinquished properties for multiple replacement properties in a single 1031 exchange transaction. This structure is valuable for property owners in San Diego, CA who want to diversify their investment portfolio, consolidate multiple properties into fewer assets, or exchange into properties that better match their investment goals. In a multi property exchange, you can sell one or more relinquished properties and acquire multiple replacement properties. The identification rules allow you to identify up to three replacement properties of any value, or more than three properties if their combined value does not exceed two hundred percent of your total relinquished property value. All replacement properties must be acquired within the one hundred eighty day deadline from the sale of your first relinquished property. The Qualified Intermediary coordinates multiple transactions and manages exchange proceeds through qualified escrow. This structure requires careful coordination to ensure all properties close within the required timelines. Multi property exchanges work well when you want to diversify across property types, locations, or tenants, or when you want to exchange into multiple single tenant net lease properties for passive income.</p>",
+    faqs: [
+      {
+        question: "What are the identification rules for a multi property exchange in San Diego, CA?",
+        answer: "In San Diego, CA, multi property exchange identification rules allow you to identify up to three replacement properties of any value, or more than three properties if their combined value does not exceed two hundred percent of your total relinquished property value. You must identify all replacement properties in writing within forty five days of selling your first relinquished property. The identification must be delivered to the Qualified Intermediary by the forty fifth day deadline. You can then acquire any or all of the identified properties within the one hundred eighty day deadline.",
+      },
+      {
+        question: "How is boot calculated in a multi property exchange in San Diego, CA?",
+        answer: "Boot in a multi property exchange in San Diego, CA is calculated based on the total value of all replacement properties compared to your total net exchange proceeds. If the combined value of all replacement properties is less than your total net sale proceeds, the difference is boot. To avoid boot, ensure the total value of all replacement properties equals or exceeds your total net exchange proceeds. Any cash received that is not reinvested is boot and may be taxable.",
+      },
+      {
+        question: "Can I sell multiple properties and buy one replacement property in San Diego, CA?",
+        answer: "Yes, in San Diego, CA you can sell multiple relinquished properties and acquire a single replacement property in a multi property exchange. The key requirement is that the replacement property value equals or exceeds the combined value of your relinquished properties to avoid boot. The identification and acquisition deadlines still apply, with forty five days to identify and one hundred eighty days total to complete the acquisition from the sale of your first relinquished property.",
+      },
+      {
+        question: "What are the timing requirements for a multi property exchange in San Diego, CA?",
+        answer: "In San Diego, CA, multi property exchanges follow standard timing requirements. You have forty five days from the sale of your first relinquished property to identify all replacement properties. You then have a total of one hundred eighty days from the sale of your first relinquished property to complete the acquisition of all replacement properties. All replacement property acquisitions must close within this one hundred eighty day deadline, regardless of when individual relinquished properties sold.",
+      },
+      {
+        question: "Can I acquire replacement properties at different times in a multi property exchange in San Diego, CA?",
+        answer: "Yes, in San Diego, CA you can acquire replacement properties at different times as long as all acquisitions complete within the one hundred eighty day deadline from the sale of your first relinquished property. The Qualified Intermediary coordinates multiple closings and manages exchange proceeds through qualified escrow. Each replacement property acquisition draws from the exchange proceeds until all properties are acquired or the deadline passes.",
+      },
+    ],
+    inclusions: [
+      "Nationwide replacement property identification for multiple properties",
+      "Qualified Intermediary coordination for multiple transactions",
+      "Qualified escrow services for multi property fund management",
+      "Forty five day identification deadline tracking for all properties",
+      "One hundred eighty day acquisition deadline monitoring",
+      "Exchange documentation preparation for multiple properties",
+      "Coordination with multiple title companies and escrow officers",
+      "Guidance on multi property identification rules and strategies",
+    ],
+    commonSituations: [
+      "A property owner in San Diego sells one large commercial property and wants to acquire multiple single tenant net lease properties to diversify their portfolio across different tenants and locations.",
+      "An investor owns several rental properties and wants to exchange them for fewer, higher quality NNN retail properties that require less management.",
+      "A real estate owner sells multiple properties and wants to acquire replacement properties in different markets or property types to spread risk and optimize returns.",
+    ],
+    complianceNote: "Educational content only. Not tax, legal, or investment advice. A 1031 exchange defers income tax on qualifying real property and does not remove transfer or documentary taxes.",
+    exampleCapability: {
+      disclaimer: "Example of the type of engagement we can handle",
+      serviceType: "Multi Property Exchange",
+      location: "San Diego, CA",
+      scope: "Coordinate a multi property exchange for a property owner selling two commercial buildings with a combined value of four million dollars and acquiring three single tenant net lease retail properties.",
+      clientSituation: "The client wants to sell two properties that require active management and exchange into multiple NNN properties for passive income. They want to diversify across different tenants and locations while deferring capital gains taxes.",
+      ourApproach: "We coordinate with a Qualified Intermediary to manage exchange proceeds from both sales, provide nationwide property identification services to locate three suitable NNN retail properties, track all deadlines, and coordinate multiple closings to ensure all acquisitions complete within the one hundred eighty day deadline.",
+      expectedOutcome: "The client successfully sells both relinquished properties, identifies three replacement properties within forty five days, acquires all three single tenant net lease properties within one hundred eighty days, and defers capital gains taxes on the entire exchange.",
+      contactCTA: "Contact us to discuss your situation in San Diego, CA. We can share references upon request.",
+    },
+  },
+  "partial-exchange": {
+    layoutKey: "sidebar",
+    mainDescription: "<p>A partial exchange occurs when you exchange only a portion of your relinquished property while retaining ownership of the remainder. This structure is valuable for property owners in San Diego, CA who want to exchange part of their property interest while keeping the rest. In a partial exchange, you divide your property interest, exchange the portion you want to dispose of, and retain the remaining portion. The exchanged portion must be clearly defined, such as a percentage interest, specific units, or a divided portion of the property. Exchange proceeds from the sold portion are used to acquire replacement property following standard exchange rules, including the forty five day identification and one hundred eighty day acquisition deadlines. The Qualified Intermediary coordinates the partial exchange and manages proceeds through qualified escrow. This structure requires proper documentation to clearly define what is being exchanged versus what is being retained. Partial exchanges work well when you want to reduce your property exposure while keeping part of the asset, or when you want to exchange a portion of property to diversify into other investments while maintaining some ownership in the original property.</p>",
+    faqs: [
+      {
+        question: "How do identification rules work in a partial exchange in San Diego, CA?",
+        answer: "In San Diego, CA, partial exchange identification rules follow standard requirements. You must identify replacement properties in writing within forty five days of selling your partial property interest. You can identify up to three replacement properties of any value, or more properties if their combined value does not exceed two hundred percent of the exchanged portion value. The identification must clearly relate to the exchanged portion, not the retained portion. The identification deadline is based on the sale date of the exchanged portion.",
+      },
+      {
+        question: "What is boot in a partial exchange in San Diego, CA?",
+        answer: "Boot in a partial exchange in San Diego, CA is calculated based on the exchanged portion only, not the entire property. If your replacement property value is less than the net proceeds from the exchanged portion, the difference is boot. The retained portion does not factor into boot calculation. To avoid boot, ensure your replacement property value equals or exceeds the net proceeds from the exchanged portion. Any cash received from the partial sale that is not reinvested is boot and may be taxable.",
+      },
+      {
+        question: "Can I exchange a percentage interest in my property in San Diego, CA?",
+        answer: "Yes, in San Diego, CA you can exchange a percentage interest in your property as a partial exchange. For example, you could exchange a fifty percent interest in a property while retaining the other fifty percent. The exchanged percentage interest must be clearly defined and documented. The exchange proceeds from that percentage interest are used to acquire replacement property following standard exchange rules and deadlines.",
+      },
+      {
+        question: "What are the timing requirements for a partial exchange in San Diego, CA?",
+        answer: "In San Diego, CA, partial exchanges follow standard timing requirements based on the sale of the exchanged portion. You have forty five days from the sale date to identify replacement properties and one hundred eighty days total to complete the acquisition. These deadlines are based on when the exchanged portion is sold, not when you originally acquired the full property. The Qualified Intermediary tracks these deadlines and coordinates the replacement property acquisition.",
+      },
+      {
+        question: "How is the property divided in a partial exchange in San Diego, CA?",
+        answer: "In San Diego, CA, property can be divided for a partial exchange in several ways. You can exchange a percentage interest in the entire property, exchange specific units or portions of a multi unit property, or divide the property through legal subdivision. The key is that the exchanged portion must be clearly defined and documented. The division must be properly structured to ensure the exchanged portion qualifies as like kind property and can be separately transferred.",
+      },
+    ],
+    inclusions: [
+      "Partial exchange structure planning and documentation",
+      "Qualified Intermediary coordination for partial exchange",
+      "Qualified escrow services for exchange proceeds",
+      "Nationwide replacement property identification services",
+      "Forty five day identification deadline tracking",
+      "One hundred eighty day acquisition deadline monitoring",
+      "Exchange documentation preparation for partial exchange",
+      "Coordination with title companies and escrow officers",
+    ],
+    commonSituations: [
+      "A property owner in San Diego wants to exchange a fifty percent interest in a commercial property while retaining the other fifty percent for continued ownership.",
+      "An investor owns a multi unit property and wants to exchange some units while keeping others, using the exchange to diversify into different property types.",
+      "A real estate owner wants to reduce exposure to a property by exchanging a portion while maintaining some ownership interest in the original asset.",
+    ],
+    complianceNote: "Educational content only. Not tax, legal, or investment advice. A 1031 exchange defers income tax on qualifying real property and does not remove transfer or documentary taxes.",
+    exampleCapability: {
+      disclaimer: "Example of the type of engagement we can handle",
+      serviceType: "Partial Exchange",
+      location: "San Diego, CA",
+      scope: "Coordinate a partial exchange for a property owner selling a fifty percent interest in a commercial building valued at two million dollars and acquiring a single tenant net lease replacement property.",
+      clientSituation: "The client wants to reduce their exposure to a commercial property by exchanging half their interest while retaining the other half. They want to use the exchange proceeds to acquire a passive NNN investment property.",
+      ourApproach: "We coordinate with a Qualified Intermediary to structure the partial exchange, establish qualified escrow for the exchanged portion proceeds, provide property identification services to locate suitable replacement properties, track all deadlines, and ensure proper documentation of the partial exchange structure.",
+      expectedOutcome: "The client successfully exchanges their fifty percent interest, identifies and acquires a single tenant net lease replacement property within the required deadlines, retains their remaining fifty percent interest, and defers capital gains taxes on the exchanged portion.",
+      contactCTA: "Contact us to discuss your situation in San Diego, CA. We can share references upon request.",
+    },
+  },
+};

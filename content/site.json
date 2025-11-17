@@ -1,0 +1,85 @@
+{
+  "company": "1031 Exchange of San Diego",
+  "phone": "619-480-0216",
+  "phoneDigits": "6194800216",
+  "email": "contact@1031exchangeofsandiego.com",
+  "address": "4727 Executive Dr, San Diego, CA 92121",
+  "website": "1031exchangeofsandiego.com",
+  "mainCity": "San Diego",
+  "state": "CA",
+  "services": [],
+  "servicesNav": [
+    {
+      "label": "NNN Identification",
+      "href": "/services/nnn-replacement-property-identification"
+    },
+    {
+      "label": "Retail STNL",
+      "href": "/services/stnl-retail-list-san-diego"
+    },
+    {
+      "label": "Industrial Net Lease",
+      "href": "/services/industrial-net-lease-scouting"
+    },
+    {
+      "label": "Reverse Exchange",
+      "href": "/services/reverse-exchange-readiness-san-diego"
+    },
+    {
+      "label": "Three Property Rule",
+      "href": "/services/three-property-rule-strategy"
+    },
+    {
+      "label": "Zero Cash Flow",
+      "href": "/services/zero-cash-flow-bridge"
+    },
+    {
+      "label": "Ground Lease Sourcing",
+      "href": "/services/ground-lease-outparcel-sourcing"
+    },
+    {
+      "label": "Credit Tenant Alerts",
+      "href": "/services/preferred-credit-tenant-list-san-diego"
+    }
+  ],
+  "locationsNav": [
+    {
+      "label": "San Diego",
+      "href": "/service-areas/san-diego-ca"
+    },
+    {
+      "label": "La Jolla",
+      "href": "/service-areas/la-jolla-ca"
+    },
+    {
+      "label": "Del Mar",
+      "href": "/service-areas/del-mar-ca"
+    },
+    {
+      "label": "Carlsbad",
+      "href": "/service-areas/carlsbad-ca"
+    },
+    {
+      "label": "Encinitas",
+      "href": "/service-areas/encinitas-ca"
+    },
+    {
+      "label": "Chula Vista",
+      "href": "/service-areas/chula-vista-ca"
+    },
+    {
+      "label": "Oceanside",
+      "href": "/service-areas/oceanside-ca"
+    },
+    {
+      "label": "Escondido",
+      "href": "/service-areas/escondido-ca"
+    }
+  ],
+  "extraLinks": [
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ]
+}
