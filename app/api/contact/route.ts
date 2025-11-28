@@ -136,14 +136,12 @@ export async function POST(request: NextRequest) {
       phone: sanitizedPhone,
       phone_plain: sanitizedPhone,
       projectType: String(body.projectType || "1031 Exchange Advisory"),
-      address: body.company ? String(body.company) : undefined,
-      city: `${PRIMARY_CITY}, ${PRIMARY_STATE_ABBR}`,
+      property: body.property ? String(body.property) : undefined,
+      estimatedCloseDate: body.estimatedCloseDate ? String(body.estimatedCloseDate) : undefined,
+      city: body.city ? String(body.city) : undefined,
+      company: body.company ? String(body.company) : undefined,
       timeline: body.timeline ? String(body.timeline) : undefined,
-      projectDescription: body.projectDetails
-        ? String(body.projectDetails)
-        : body.details
-          ? String(body.details)
-          : undefined,
+      message: body.message ? String(body.message) : (body.details ? String(body.details) : undefined),
     };
 
     try {

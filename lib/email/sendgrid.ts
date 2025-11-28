@@ -25,10 +25,12 @@ type Lead = {
   phone?: string;
   phone_plain?: string;
   projectType: string;
-  projectDescription?: string;
-  timeline?: string;
-  address?: string;
+  property?: string;
+  estimatedCloseDate?: string;
   city?: string;
+  company?: string;
+  timeline?: string;
+  message?: string;
 };
 
 type BrandData = ReturnType<typeof getBrand>;

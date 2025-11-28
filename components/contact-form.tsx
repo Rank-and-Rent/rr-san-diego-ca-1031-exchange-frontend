@@ -18,6 +18,9 @@ interface FormState {
   email: string;
   phone: string;
   projectType: string;
+  property: string;
+  estimatedCloseDate: string;
+  city: string;
   timeline: string;
   details: string;
 }
@@ -54,6 +57,9 @@ export function ContactForm({
     email: "",
     phone: "",
     projectType: initialProjectType?.trim() || "",
+    property: "",
+    estimatedCloseDate: "",
+    city: "",
     timeline: "",
     details: "",
   });
@@ -117,12 +123,7 @@ export function ContactForm({
     if (!formState.projectType.trim()) {
       fieldErrors.projectType = "Select a project type";
     }
-    if (!formState.timeline.trim()) {
-      fieldErrors.timeline = "Timeline is required";
-    }
-    if (!formState.details.trim()) {
-      fieldErrors.details = "Share a few project details";
-    }
+    // property, estimatedCloseDate, city, timeline, and details are all optional
 
     return fieldErrors;
   };
@@ -174,6 +175,9 @@ export function ContactForm({
         email: "",
         phone: "",
         projectType: initialProjectType?.trim() || "",
+        property: "",
+        estimatedCloseDate: "",
+        city: "",
         timeline: "",
         details: "",
       });
@@ -294,35 +298,55 @@ export function ContactForm({
             <p className="mt-1 text-xs text-red-400">{errors.projectType}</p>
           ) : null}
         </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field
+            label="Property Being Sold"
+            name="property"
+            type="text"
+            placeholder="Include property type, location, and estimated value (optional)"
+            value={formState.property}
+            onChange={(value) => handleChange("property", value)}
+          />
+          <Field
+            label="Estimated Close Date"
+            name="estimatedCloseDate"
+            type="date"
+            value={formState.estimatedCloseDate}
+            onChange={(value) => handleChange("estimatedCloseDate", value)}
+          />
+        </div>
         <Field
-          label="Timeline *"
+          label="City"
+          name="city"
+          type="text"
+          placeholder="Primary metro or submarket (optional)"
+          value={formState.city}
+          onChange={(value) => handleChange("city", value)}
+        />
+        <Field
+          label="Timeline"
           name="timeline"
           type="text"
-          placeholder="Example: List three assets within 10 days"
+          placeholder="Example: List three assets within 10 days (optional)"
           value={formState.timeline}
           onChange={(value) => handleChange("timeline", value)}
-          error={errors.timeline}
         />
         <div>
           <label
             htmlFor={`${id}-details`}
             className="text-sm font-semibold text-heading"
           >
-            Project Details *
+            Message
           </label>
           <textarea
             id={`${id}-details`}
             name="details"
             rows={5}
             className="mt-1 w-full rounded-xl border border-outline/60 bg-panel/40 px-4 py-3 text-sm text-heading placeholder:text-ink/50 focus:border-primary focus:outline-none"
-            placeholder="Share relinquished sale info, debt needs, target tenants, or preferred locations."
+            placeholder="Outline goals, replacement preferences, or coordination needs (optional)"
             value={formState.details}
             onChange={(event) => handleChange("details", event.target.value)}
-            required
           />
-          {errors.details ? (
-            <p className="mt-1 text-xs text-red-400">{errors.details}</p>
-          ) : null}
         </div>
 
         <div>
