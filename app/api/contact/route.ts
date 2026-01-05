@@ -144,10 +144,19 @@ export async function POST(request: NextRequest) {
       message: body.message ? String(body.message) : (body.details ? String(body.details) : undefined),
     };
 
+    const brandWithDate = {
+      ...brand,
+      submitted_date: new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+    };
+
     try {
       await Promise.all([
-        sendCustomerConfirmation(brand, lead),
-        sendInternalNotifications(brand, lead),
+        sendCustomerConfirmation(brandWithDate, lead),
+        sendInternalNotifications(brandWithDate, lead),
       ]);
     } catch (emailError) {
       console.error("SendGrid email error", emailError);
