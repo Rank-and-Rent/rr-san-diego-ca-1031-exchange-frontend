@@ -46,11 +46,11 @@ export function HomeServiceGroups({ groups }: HomeServiceGroupsProps) {
         onSubmit={setQuery}
       />
       {query && hitCount === 0 ? (
-        <div className="rounded-xl border border-outline bg-secondary p-5 text-sm text-ink/70">
+        <div className="rounded-xl border border-[#0F2A3D]/10 bg-white p-5 text-sm text-[#0F2A3D]/70">
           We can help with "{query}".{" "}
           <Link
             href={`/contact?projectType=${encodeURIComponent(query)}`}
-            className="text-primary hover:underline"
+            className="text-[#0F2A3D] font-medium hover:underline"
           >
             Contact us and we will prefill the request.
           </Link>
@@ -60,24 +60,24 @@ export function HomeServiceGroups({ groups }: HomeServiceGroupsProps) {
           {filtered.map((group) => (
             <article
               key={group.category}
-              className="rounded-xl border border-outline bg-white p-6 shadow-sm"
+              className="rounded-xl border border-[#0F2A3D]/10 bg-white p-6 shadow-sm"
             >
-              <p className="text-xs uppercase tracking-wide text-muted">
+              <p className="text-xs uppercase tracking-wide text-[#0F2A3D]/50">
                 {group.category}
               </p>
               <ul className="mt-4 space-y-3">
                 {group.items.map((service) => (
                   <li
                     key={service.slug}
-                    className="rounded-lg border border-outline bg-secondary p-4"
+                    className="rounded-lg border border-[#0F2A3D]/10 bg-[#F8F9FA] p-4"
                   >
                     <Link
                       href={service.route}
-                      className="text-lg font-semibold text-heading hover:text-primary transition"
+                      className="text-lg font-semibold text-[#0F2A3D] hover:text-[#1a3d54] transition"
                     >
                       {service.name}
                     </Link>
-                    <p className="mt-2 text-sm text-ink/80">
+                    <p className="mt-2 text-sm text-[#0F2A3D]/70">
                       {service.short}
                     </p>
                   </li>

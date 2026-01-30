@@ -5,7 +5,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "convenience-store-gas",
     name: "Convenience Store Gas C Store",
     route: "/property-types/convenience-store-gas",
-    heroImage: "/property-types/convenience-store-gas/hero.jpg",
+    heroImage: "/property-types/convenience-store-gas/convenience-store.webp",
     summary:
       "Fuel-backed convenience stores combine daily-needs traffic with national-credit lease structures, giving 1031 buyers predictable cash flow and attractive land coverage.",
     valueDrivers: [
@@ -21,7 +21,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "drive-thru-qsr",
     name: "Drive Thru QSR",
     route: "/property-types/drive-thru-qsr",
-    heroImage: "/property-types/drive-thru-qsr/hero.jpg",
+    heroImage: "/property-types/drive-thru-qsr/drive-thru-qsr.jpg",
     summary:
       "Next-generation drive thru prototypes with dual lanes and mobile order staging continue to deliver best-in-class rent coverage for impatient diners and income-focused investors.",
     valueDrivers: [
@@ -37,7 +37,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "pharmacy",
     name: "Pharmacy",
     route: "/property-types/pharmacy",
-    heroImage: "/property-types/pharmacy/hero.jpg",
+    heroImage: "/property-types/pharmacy/pharmacy.png",
     summary:
       "Investment-grade pharmacies anchor high-visibility corners and pair healthcare demand with long corporate leases, making them a staple allocation for tax-deferral portfolios.",
     valueDrivers: [
@@ -53,7 +53,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "dollar-store",
     name: "Dollar Store",
     route: "/property-types/dollar-store",
-    heroImage: "/property-types/dollar-store/hero.jpg",
+    heroImage: "/property-types/dollar-store/dollar-store.jpg",
     summary:
       "Limited assortment discount retailers thrive in suburban and rural trade areas, allowing exchangers to capture defensive cash flow with manageable ticket sizes.",
     valueDrivers: [
@@ -69,7 +69,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "coffee-drive-thru",
     name: "Coffee Drive Thru",
     route: "/property-types/coffee-drive-thru",
-    heroImage: "/property-types/coffee-drive-thru/hero.jpg",
+    heroImage: "/property-types/coffee-drive-thru/coffee-drive-thru.jpg",
     summary:
       "Dedicated coffee and beverage drive thrus capture morning commuters, mobile orders, and high-margin beverages that translate into excellent rent coverage.",
     valueDrivers: [
@@ -85,7 +85,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "auto-parts-retail",
     name: "Auto Parts Retail",
     route: "/property-types/auto-parts-retail",
-    heroImage: "/property-types/auto-parts-retail/hero.jpg",
+    heroImage: "/property-types/auto-parts-retail/auto-parts-retail.jpg",
     summary:
       "Omnichannel auto parts suppliers blend e-commerce fulfillment with walk-in demand, producing steady sales and true NNN leases for exchangers.",
     valueDrivers: [
@@ -101,7 +101,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "hard-discount-grocer",
     name: "Hard Discount Grocer",
     route: "/property-types/hard-discount-grocer",
-    heroImage: "/property-types/hard-discount-grocer/hero.jpg",
+    heroImage: "/property-types/hard-discount-grocer/hard-discount-grocer.webp",
     summary:
       "Limited assortment grocers operate efficient footprints with private-label assortments, giving investors stable anchors that drive traffic to surrounding pads.",
     valueDrivers: [
@@ -117,7 +117,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "ground-lease-outparcel",
     name: "Ground Lease Outparcel",
     route: "/property-types/ground-lease-outparcel",
-    heroImage: "/property-types/ground-lease-outparcel/hero.jpg",
+    heroImage: "/property-types/ground-lease-outparcel/ground-lease-outparcel.jpeg",
     summary:
       "Ground leases allow exchangers to control trophy dirt while tenants fund improvements, producing bond-like income with upside at reversion.",
     valueDrivers: [
@@ -133,7 +133,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "urgent-care-medical",
     name: "Urgent Care Medical Clinic",
     route: "/property-types/urgent-care-medical",
-    heroImage: "/property-types/urgent-care-medical/hero.jpg",
+    heroImage: "/property-types/urgent-care-medical/urgent-care-medicine.jpg",
     summary:
       "Outpatient and urgent care facilities convert retail zoning into healthcare throughput, driving sticky tenancy and strong demographic alignment.",
     valueDrivers: [
@@ -149,7 +149,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "auto-service-oil-change",
     name: "Auto Service Oil Change",
     route: "/property-types/auto-service-oil-change",
-    heroImage: "/property-types/auto-service-oil-change/hero.jpg",
+    heroImage: "/property-types/auto-service-oil-change/auto-service-oil.jpeg",
     summary:
       "Express oil change and light service bays offer low-overhead operations with recurring visits, making them reliable cash generators for exchange proceeds.",
     valueDrivers: [
@@ -165,7 +165,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "tractor-supply",
     name: "Tractor Supply Farm Ranch",
     route: "/property-types/tractor-supply",
-    heroImage: "/property-types/tractor-supply/hero.jpg",
+    heroImage: "/property-types/tractor-supply/tractor-supply.jpg",
     summary:
       "Rural lifestyle and ag-supply stores combine outdoor storage, propane, and seasonal merchandising, providing large sites with meaningful collateral value.",
     valueDrivers: [
@@ -181,7 +181,7 @@ export const propertyTypesData: PropertyTypeItem[] = [
     slug: "last-mile-logistics",
     name: "Last Mile Logistics Flex",
     route: "/property-types/last-mile-logistics",
-    heroImage: "/property-types/last-mile-logistics/hero.jpg",
+    heroImage: "/property-types/last-mile-logistics/last-mile-logistics.png",
     summary:
       "Final-mile warehouses and shallow-bay flex assets keep retailers close to rooftops, giving investors durable rent growth tied to e-commerce adoption.",
     valueDrivers: [
@@ -194,4 +194,3 @@ export const propertyTypesData: PropertyTypeItem[] = [
       "Underwrite truck court depths, trailer storage rights, and the tenant's capital expenditures in office buildouts.",
   },
 ];
-

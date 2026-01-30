@@ -144,18 +144,18 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-[#0F2A3D] py-20">
+      {/* CTA Section - Nude/Tan Color */}
+      <section className="bg-[#E8DED1] py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-light text-[#0F2A3D] mb-6">
             Ready to Start Your Exchange?
           </h2>
-          <p className="text-lg text-white/80 mb-8">
+          <p className="text-lg text-[#0F2A3D]/70 mb-8">
             Fill out the form above or give us a call. We respond to all inquiries within one business day.
           </p>
           <a
             href={`tel:${site.phoneDigits}`}
-            className="inline-block bg-white text-[#0F2A3D] px-10 py-4 rounded-lg text-sm font-medium hover:bg-white/90 transition"
+            className="inline-block bg-[#0F2A3D] text-white px-10 py-4 rounded-lg text-sm font-medium hover:bg-[#1a3d54] transition"
           >
             Call {site.phone}
           </a>

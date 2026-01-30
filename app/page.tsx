@@ -67,13 +67,12 @@ const faqEntries = [
 // Show more spotlights for scrolling
 const featuredSpotlights = inventorySpotlight01;
 
-// Stats data matching Unique Properties design
+// Stats data - only truthful metrics
 const statsData = [
-  { number: "30+", label: "Years Combined Experience" },
-  { number: "500+", label: "Successful Exchanges" },
   { number: "50", label: "States Covered" },
-  { number: "$2B+", label: "Transaction Volume" },
   { number: "45", label: "Day Identification Period" },
+  { number: "180", label: "Day Exchange Window" },
+  { number: "24/7", label: "Property Monitoring" },
 ];
 
 const organizationSchema = {
@@ -223,7 +222,7 @@ export default function Home() {
                     >
                       <div className="relative h-[200px]">
                         <Image
-                          src={`/property-types/${property.slug}/hero.jpg`}
+                          src={property.heroImage}
                           alt={property.name}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -372,7 +371,7 @@ export default function Home() {
               <p className="text-sm uppercase tracking-[0.3em] text-white/50 mb-6">About Us</p>
               <h2 className="text-4xl md:text-5xl font-light text-white mb-10">Our Story</h2>
               <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
-                1031 Exchange of San Diego was founded to help real estate investors navigate the complexities of tax-deferred exchanges. With decades of combined experience in commercial real estate and 1031 transactions, our team has facilitated over 500 successful exchanges totaling more than $2 billion in transaction volume.
+                1031 Exchange of San Diego was founded to help real estate investors navigate the complexities of tax-deferred exchanges. Our team brings deep experience in commercial real estate and 1031 transactions, with a focus on identifying quality replacement properties that meet your investment criteria.
               </p>
               <p className="text-lg text-white/70 leading-relaxed">
                 We specialize in identifying high-quality replacement properties across all 50 states, coordinating with qualified intermediaries, and ensuring your exchange meets all IRS requirements. Our mission is to protect your 45-day identification deadline while finding properties that match your investment goals.

@@ -31,7 +31,7 @@ export function QueryInput({
         onSubmit?.(value);
       }}
     >
-      <label className="text-sm font-semibold text-heading md:w-48">
+      <label className="text-sm font-semibold text-[#0F2A3D] md:w-48">
         {label}
       </label>
       <div className="flex flex-1 items-center gap-2">
@@ -44,7 +44,7 @@ export function QueryInput({
             onChange(nextValue);
           }}
           placeholder={placeholder}
-          className="w-full rounded-lg border border-outline bg-white px-4 py-3 text-sm text-heading placeholder:text-ink/50 focus:border-primary focus:outline-none"
+          className="w-full rounded-lg border border-[#0F2A3D]/20 bg-white px-4 py-3 text-sm text-[#0F2A3D] placeholder:text-[#0F2A3D]/50 focus:border-[#0F2A3D] focus:outline-none"
         />
         <button
           type="button"
@@ -53,7 +53,7 @@ export function QueryInput({
             onChange("");
             onSubmit?.("");
           }}
-          className="rounded-full border border-panel px-4 py-2 text-xs font-semibold text-heading transition hover:bg-panel hover:text-white"
+          className="rounded-full border border-[#0F2A3D]/20 px-4 py-2 text-xs font-semibold text-[#0F2A3D] transition hover:bg-[#0F2A3D] hover:text-white"
           aria-label="Clear search query"
         >
           Clear

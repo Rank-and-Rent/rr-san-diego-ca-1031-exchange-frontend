@@ -42,11 +42,11 @@ export function HomeLocationGrid({ locations }: HomeLocationGridProps) {
         onSubmit={setQuery}
       />
       {filtered.length === 0 ? (
-        <div className="rounded-xl border border-outline bg-secondary p-5 text-sm text-ink/70">
+        <div className="rounded-xl border border-[#0F2A3D]/10 bg-white p-5 text-sm text-[#0F2A3D]/70">
           We can help with "{query}".{" "}
           <Link
             href={`/contact?projectType=${encodeURIComponent("Other")}`}
-            className="text-primary hover:underline"
+            className="text-[#0F2A3D] font-medium hover:underline"
           >
             Contact us and we will assign "Other" as your project type.
           </Link>
@@ -57,13 +57,13 @@ export function HomeLocationGrid({ locations }: HomeLocationGridProps) {
             <Link
               key={location.slug}
               href={location.route}
-              className="rounded-xl border border-outline bg-white p-5 shadow-sm transition hover:shadow-md hover:border-primary"
+              className="rounded-xl border border-[#0F2A3D]/10 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-[#0F2A3D]/30"
             >
-              <p className="text-xs uppercase text-muted">{location.type}</p>
-              <p className="mt-2 text-xl font-semibold text-heading">
+              <p className="text-xs uppercase text-[#0F2A3D]/50">{location.type}</p>
+              <p className="mt-2 text-xl font-semibold text-[#0F2A3D]">
                 {location.name}
               </p>
-              <p className="mt-2 text-sm text-ink/70">
+              <p className="mt-2 text-sm text-[#0F2A3D]/70">
                 Replacement property watchlists, comps, and tenant demand notes.
               </p>
             </Link>
@@ -73,13 +73,13 @@ export function HomeLocationGrid({ locations }: HomeLocationGridProps) {
       <div className="flex flex-wrap items-center gap-3">
         <Link
           href="/service-areas"
-          className="rounded-full border border-panel px-6 py-2.5 text-sm font-semibold text-heading transition hover:bg-panel hover:text-white"
+          className="rounded-full border border-[#0F2A3D] px-6 py-2.5 text-sm font-semibold text-[#0F2A3D] transition hover:bg-[#0F2A3D] hover:text-white"
         >
           View all {locations.length} service areas
         </Link>
         <Link
           href="/contact?projectType=Other"
-          className="rounded-full bg-panel px-6 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
+          className="rounded-full bg-[#0F2A3D] px-6 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
         >
           Contact about Other markets
         </Link>

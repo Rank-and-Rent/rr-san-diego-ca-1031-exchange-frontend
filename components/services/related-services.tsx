@@ -33,11 +33,11 @@ export function RelatedServices({ services }: RelatedServicesProps) {
         onSubmit={setQuery}
       />
       {filtered.length === 0 ? (
-        <div className="rounded-2xl border border-outline/40 bg-panel/50 p-5 text-sm text-ink/70">
-          We can help with “{query}”.{" "}
+        <div className="rounded-2xl border border-[#0F2A3D]/10 bg-white p-5 text-sm text-[#0F2A3D]/70">
+          We can help with "{query}".{" "}
           <Link
             href={`/contact?projectType=${encodeURIComponent(query)}`}
-            className="text-primary hover:underline"
+            className="text-[#0F2A3D] font-medium hover:underline"
           >
             Contact intake
           </Link>{" "}
@@ -48,18 +48,18 @@ export function RelatedServices({ services }: RelatedServicesProps) {
           {filtered.map((service) => (
             <article
               key={service.slug}
-              className="rounded-2xl border border-outline/40 bg-panel/50 p-4"
+              className="rounded-2xl border border-[#0F2A3D]/10 bg-white p-4 hover:shadow-md transition"
             >
-              <p className="text-xs uppercase tracking-wide text-ink/60">
+              <p className="text-xs uppercase tracking-wide text-[#0F2A3D]/50">
                 {service.category}
               </p>
-              <h4 className="mt-1 text-lg font-semibold text-heading">
+              <h4 className="mt-1 text-lg font-semibold text-[#0F2A3D]">
                 {service.name}
               </h4>
-              <p className="mt-2 text-sm text-ink/70">{service.short}</p>
+              <p className="mt-2 text-sm text-[#0F2A3D]/70">{service.short}</p>
               <Link
                 href={service.route}
-                className="mt-3 inline-flex text-sm font-semibold text-primary hover:underline"
+                className="mt-3 inline-flex text-sm font-semibold text-[#0F2A3D] hover:underline"
               >
                 Open service →
               </Link>
@@ -70,4 +70,3 @@ export function RelatedServices({ services }: RelatedServicesProps) {
     </div>
   );
 }
-

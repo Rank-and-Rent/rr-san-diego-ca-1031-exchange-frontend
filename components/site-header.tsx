@@ -72,30 +72,10 @@ export function SiteHeader() {
             <span className="text-white/80 text-xl md:text-2xl font-light tracking-wide">SD</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className={`text-sm font-medium transition ${
-                  pathname === link.href || pathname.startsWith(link.href + '/')
-                    ? 'text-white'
-                    : 'text-white/80 hover:text-white'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Empty div for desktop balance */}
-          <div className="hidden lg:block w-[100px]" />
-
-          {/* Mobile Hamburger Button - ALWAYS VISIBLE on mobile */}
+          {/* Three-bar Hamburger Button - VISIBLE ON ALL SCREEN SIZES */}
           <button
             type="button"
-            className="flex lg:hidden p-3 -mr-3 text-white touch-manipulation z-50"
+            className="flex p-3 -mr-3 text-white touch-manipulation z-50"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -121,9 +101,9 @@ export function SiteHeader() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Menu Overlay - Works on all screen sizes */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
+        className={`fixed inset-0 z-40 transition-all duration-300 ${
           mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >

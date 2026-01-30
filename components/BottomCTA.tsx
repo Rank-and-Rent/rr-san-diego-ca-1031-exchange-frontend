@@ -17,16 +17,16 @@ export default function BottomCTA({
     : "/contact#contact-form";
 
   return (
-    <section className="bg-[#F8F9FA] border-t border-gray-100">
+    <section className="bg-[#E8DED1]">
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-start gap-6 py-12 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-widest text-gray-400">
+          <p className="text-xs uppercase tracking-widest text-[#0F2A3D]/50">
             Next steps
           </p>
           <h2 className="mt-2 text-2xl font-semibold text-[#0F2A3D]">
             {heading}
           </h2>
-          <p className="mt-2 text-sm text-gray-600">{subheading}</p>
+          <p className="mt-2 text-sm text-[#0F2A3D]/70">{subheading}</p>
         </div>
         <div className="flex flex-wrap gap-3">
           <a
