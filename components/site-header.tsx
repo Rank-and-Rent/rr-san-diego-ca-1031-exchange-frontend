@@ -154,8 +154,8 @@ export function SiteHeader() {
           {/* Contact Info */}
           <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-white/10">
             <p className="text-white/50 text-sm mb-3">Get in touch</p>
-            <a href="tel:+18585551031" className="block text-white text-lg mb-2 hover:text-white/80">(858) 555-1031</a>
-            <a href="mailto:info@1031sandiego.com" className="block text-white/70 text-sm hover:text-white">info@1031sandiego.com</a>
+            <a href="tel:+16194800216" className="block text-white text-lg mb-2 hover:text-white/80">619-480-0216</a>
+            <a href="mailto:contact@1031exchangeofsandiego.com" className="block text-white/70 text-sm hover:text-white">contact@1031exchangeofsandiego.com</a>
           </div>
         </nav>
       </div>
