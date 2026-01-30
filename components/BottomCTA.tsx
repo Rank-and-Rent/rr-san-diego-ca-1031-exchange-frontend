@@ -17,27 +17,27 @@ export default function BottomCTA({
     : "/contact#contact-form";
 
   return (
-    <section className="border-t border-outline bg-panel">
-      <div className="container flex flex-col items-start gap-4 py-10 md:flex-row md:items-center md:justify-between">
+    <section className="bg-[#F8F9FA] border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col items-start gap-6 py-12 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.35em] text-primary">
+          <p className="text-xs uppercase tracking-widest text-gray-400">
             Next steps
           </p>
-          <h2 className="mt-2 text-2xl font-semibold text-heading">
+          <h2 className="mt-2 text-2xl font-semibold text-[#0F2A3D]">
             {heading}
           </h2>
-          <p className="mt-2 text-sm text-ink/70">{subheading}</p>
+          <p className="mt-2 text-sm text-gray-600">{subheading}</p>
         </div>
         <div className="flex flex-wrap gap-3">
           <a
             href={`tel:${site.phoneDigits}`}
-            className="rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primaryfg transition hover:opacity-90"
+            className="bg-[#0F2A3D] text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-[#1a3d54] transition"
           >
             Call {site.phone}
           </a>
           <Link
             href={contactHref}
-            className="rounded-full border border-outline px-5 py-3 text-sm font-semibold text-heading transition hover:border-primary hover:text-primary"
+            className="border border-[#0F2A3D] text-[#0F2A3D] px-6 py-3 rounded-lg text-sm font-medium hover:bg-[#0F2A3D] hover:text-white transition"
           >
             Talk to intake
           </Link>

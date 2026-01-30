@@ -46,8 +46,8 @@ export function HomeServiceGroups({ groups }: HomeServiceGroupsProps) {
         onSubmit={setQuery}
       />
       {query && hitCount === 0 ? (
-        <div className="rounded-2xl border border-outline/40 bg-panel/60 p-5 text-sm text-ink/70">
-          We can help with “{query}”.{" "}
+        <div className="rounded-xl border border-outline bg-secondary p-5 text-sm text-ink/70">
+          We can help with "{query}".{" "}
           <Link
             href={`/contact?projectType=${encodeURIComponent(query)}`}
             className="text-primary hover:underline"
@@ -60,20 +60,20 @@ export function HomeServiceGroups({ groups }: HomeServiceGroupsProps) {
           {filtered.map((group) => (
             <article
               key={group.category}
-              className="rounded-2xl border border-outline/40 bg-panel/60 p-6"
+              className="rounded-xl border border-outline bg-white p-6 shadow-sm"
             >
-              <p className="text-xs uppercase tracking-wide text-ink/60">
+              <p className="text-xs uppercase tracking-wide text-muted">
                 {group.category}
               </p>
               <ul className="mt-4 space-y-3">
                 {group.items.map((service) => (
                   <li
                     key={service.slug}
-                    className="rounded-xl border border-outline/30 bg-paper/50 p-4"
+                    className="rounded-lg border border-outline bg-secondary p-4"
                   >
                     <Link
                       href={service.route}
-                      className="text-lg font-semibold text-heading hover:text-primary"
+                      className="text-lg font-semibold text-heading hover:text-primary transition"
                     >
                       {service.name}
                     </Link>
@@ -90,4 +90,3 @@ export function HomeServiceGroups({ groups }: HomeServiceGroupsProps) {
     </div>
   );
 }
-

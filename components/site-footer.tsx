@@ -28,30 +28,30 @@ const serviceAreaColumns = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-outline bg-panel">
-      <div className="container grid gap-10 py-12 lg:grid-cols-3">
+    <footer className="bg-[#0F2A3D] text-white">
+      <div className="max-w-7xl mx-auto px-4 grid gap-10 py-16 lg:grid-cols-3">
         <div>
-          <p className="text-xs uppercase tracking-[0.35em] text-primary">
+          <p className="text-xs uppercase tracking-widest text-white/50">
             {site.company}
           </p>
-          <p className="mt-2 text-2xl font-semibold text-heading">
+          <p className="mt-2 text-2xl font-semibold text-white">
             1031 Exchange of {PRIMARY_CITY}
           </p>
-          <p className="mt-3 text-sm text-ink/70">
+          <p className="mt-4 text-sm text-white/60">
             {PRIMARY_CITY}, {PRIMARY_STATE_ABBR}
           </p>
-          <p className="mt-1 text-sm text-ink/70">Phone: {site.phone}</p>
-          <p className="mt-1 text-sm text-ink/70">Email: {site.email}</p>
-          <p className="mt-2 text-sm text-ink/70">Hours: Mon-Fri 9am-5pm PST</p>
-          <div className="mt-6 space-y-3">
-            <p className="text-sm font-semibold text-heading">Map</p>
-            <div className="overflow-hidden rounded-2xl border border-outline/40">
+          <p className="mt-1 text-sm text-white/60">Phone: {site.phone}</p>
+          <p className="mt-1 text-sm text-white/60">Email: {site.email}</p>
+          <p className="mt-2 text-sm text-white/60">Hours: Mon-Fri 9am-5pm PST</p>
+          <div className="mt-8">
+            <p className="text-sm font-semibold text-white mb-3">Map</p>
+            <div className="overflow-hidden rounded-lg">
               <iframe
                 title={`${PRIMARY_CITY}, ${PRIMARY_STATE_ABBR} map`}
                 src={`https://www.google.com/maps?q=${encodeURIComponent(
                   `${PRIMARY_CITY}, ${PRIMARY_STATE_ABBR}`,
                 )}&output=embed`}
-                className="h-48 w-full border-0"
+                className="h-40 w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
@@ -60,15 +60,15 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold text-heading">Services</p>
-          <div className="mt-3 grid gap-4 sm:grid-cols-2">
+          <p className="text-sm font-semibold text-white mb-4">Services</p>
+          <div className="grid gap-4 sm:grid-cols-2">
             {serviceColumns.map((column, columnIndex) => (
-              <ul key={`services-${columnIndex}`} className="space-y-2 text-sm text-ink/80">
+              <ul key={`services-${columnIndex}`} className="space-y-2 text-sm text-white/60">
                 {column.map((service) => (
                   <li key={service.slug}>
                     <Link
                       href={service.route}
-                      className="transition hover:text-primary"
+                      className="hover:text-white transition"
                     >
                       {service.name}
                     </Link>
@@ -79,25 +79,25 @@ export function SiteFooter() {
           </div>
           <Link
             href="/services"
-            className="mt-4 inline-flex text-sm font-semibold text-primary hover:underline"
+            className="mt-4 inline-flex text-sm font-medium text-white/80 hover:text-white"
           >
-            View all {servicesData.length} services
+            View all {servicesData.length} services →
           </Link>
         </div>
 
         <div>
-          <p className="text-sm font-semibold text-heading">Service Areas</p>
-          <div className="mt-3 grid gap-4 sm:grid-cols-2">
+          <p className="text-sm font-semibold text-white mb-4">Service Areas</p>
+          <div className="grid gap-4 sm:grid-cols-2">
             {serviceAreaColumns.map((column, columnIndex) => (
               <ul
                 key={`service-areas-${columnIndex}`}
-                className="space-y-2 text-sm text-ink/80"
+                className="space-y-2 text-sm text-white/60"
               >
                 {column.map((location) => (
                   <li key={location.slug}>
                     <Link
                       href={location.route}
-                      className="transition hover:text-primary"
+                      className="hover:text-white transition"
                     >
                       {location.name}
                     </Link>
@@ -108,64 +108,38 @@ export function SiteFooter() {
           </div>
           <Link
             href="/service-areas"
-            className="mt-4 inline-flex text-sm font-semibold text-primary hover:underline"
+            className="mt-4 inline-flex text-sm font-medium text-white/80 hover:text-white"
           >
-            View all {locationsData.length} service areas
+            View all {locationsData.length} service areas →
           </Link>
         </div>
       </div>
-      <div className="border-t border-outline/40">
-        <div className="container flex flex-col gap-4 py-6 text-sm text-ink/70 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-wrap gap-4 text-sm">
-            <Link href="/services" className="hover:text-primary">
-              Services
-            </Link>
-            <Link href="/service-areas" className="hover:text-primary">
-              Service Areas
-            </Link>
-            <Link href="/blog" className="hover:text-primary">
-              Blog
-            </Link>
-            <Link href="/tools" className="hover:text-primary">
-              Tools
-            </Link>
-            <Link href="/contact#contact-form" className="hover:text-primary">
-              Contact
-            </Link>
-            <Link href="/about" className="hover:text-primary">
-              About
-            </Link>
-            <Link href="/privacy" className="hover:text-primary">
-              Privacy
-            </Link>
-            <Link href="/terms" className="hover:text-primary">
-              Terms
-            </Link>
-            <Link href="/sitemap.xml" className="hover:text-primary">
-              Sitemap XML
-            </Link>
+
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col gap-4 py-6 text-sm text-white/50 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap gap-6 text-sm">
+            <Link href="/services" className="hover:text-white">Services</Link>
+            <Link href="/service-areas" className="hover:text-white">Service Areas</Link>
+            <Link href="/blog" className="hover:text-white">Blog</Link>
+            <Link href="/tools" className="hover:text-white">Tools</Link>
+            <Link href="/contact" className="hover:text-white">Contact</Link>
+            <Link href="/about" className="hover:text-white">About</Link>
+            <Link href="/privacy" className="hover:text-white">Privacy</Link>
+            <Link href="/terms" className="hover:text-white">Terms</Link>
           </div>
-          <p className="text-xs text-ink/60">
+          <p className="text-xs text-white/40">
             © {new Date().getFullYear()} {site.company}. All rights reserved.
           </p>
         </div>
       </div>
-      <div className="border-t border-outline/40 bg-panel/80">
-        <div className="container space-y-2 py-6 text-xs text-ink/60">
-          <p>
-            This site helps investors identify potential replacement properties
-            for Section 1031 exchanges.
-          </p>
-          <p>
-            This site is not a Qualified Intermediary, law firm, broker, or CPA.
-          </p>
-          <p>
-            Users should consult a Qualified Intermediary and tax advisor before
-            acting.
-          </p>
+
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 py-6 text-xs text-white/40 space-y-1">
+          <p>This site helps investors identify potential replacement properties for Section 1031 exchanges.</p>
+          <p>This site is not a Qualified Intermediary, law firm, broker, or CPA.</p>
+          <p>Users should consult a Qualified Intermediary and tax advisor before acting.</p>
         </div>
       </div>
     </footer>
   );
 }
-

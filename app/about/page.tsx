@@ -114,7 +114,6 @@ export default function AboutPage() {
         </div>
 
         <ContactForm
-          projectTypeOptions={projectTypeOptions}
           subheading="Share your timeline, target tenants, and any advisor introductions you need. We will respond with a secure intake link."
         />
       </section>

@@ -183,8 +183,6 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
         <section id="location-contact">
           <ContactForm
-            initialProjectType={`${location.name} property search`}
-            projectTypeOptions={projectTypeOptions}
             subheading={`We help you identify replacement properties in ${location.name}, ${PRIMARY_STATE_ABBR}, and across all 50 states. We coordinate secure intake, property matching, QI, and lender communication while remaining outside the Qualified Intermediary role.`}
           />
         </section>

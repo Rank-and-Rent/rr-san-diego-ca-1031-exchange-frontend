@@ -20,10 +20,15 @@ const config: Config = {
         secondaryfg: tokens.secondaryFg,
         outline: tokens.outline,
         panel: tokens.panel,
+        accent: tokens.accent,
+        muted: tokens.muted,
       },
       borderRadius: {
         xl: "1rem",
         "2xl": "1.25rem",
+      },
+      fontFamily: {
+        serif: ["Georgia", "Times New Roman", "serif"],
       },
     },
   },

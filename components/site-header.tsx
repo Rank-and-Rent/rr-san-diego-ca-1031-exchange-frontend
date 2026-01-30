@@ -1,71 +1,22 @@
 'use client';
 
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import site from "@/content/site.json";
-import { servicesData, locationsData } from "@/data";
-import { exchangeTools } from "@/data/tools";
+import { useEffect, useState } from "react";
 
-type MenuKey = "services" | "serviceAreas" | "tools" | null;
-
-const primaryLinks = [
-  { label: "About", href: "/about" },
+const navLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
   { label: "Property Types", href: "/property-types" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact#contact-form" },
+  { label: "Locations", href: "/service-areas" },
+  { label: "Contact Us", href: "/contact" },
 ];
-
-const prioritizedServiceSlugs = [
-  "nnn-replacement-property-identification",
-  "stnl-retail-list-san-diego",
-  "industrial-net-lease-scouting",
-  "medical-office-1031-matching",
-  "self-storage-exchange-targets",
-  "reverse-exchange-readiness-san-diego",
-  "timeline-assurance-program",
-  "rent-roll-and-t12-validation",
-];
-
-const prioritizedServices = prioritizedServiceSlugs
-  .map((slug) => servicesData.find((service) => service.slug === slug))
-  .filter((service): service is (typeof servicesData)[number] =>
-    Boolean(service),
-  );
-
-const supplementalServices = servicesData.filter(
-  (service) => !prioritizedServices.some((item) => item.slug === service.slug),
-);
-
-const serviceMenu = [...prioritizedServices, ...supplementalServices].slice(
-  0,
-  8,
-);
-
-const locationMenu = [...locationsData]
-  .sort((a, b) => {
-    const priorityA = a.priority ?? Number.MAX_SAFE_INTEGER;
-    const priorityB = b.priority ?? Number.MAX_SAFE_INTEGER;
-    if (priorityA !== priorityB) {
-      return priorityA - priorityB;
-    }
-    return a.name.localeCompare(b.name);
-  })
-  .slice(0, 8);
-
-const toolMenu = exchangeTools.map((tool) => ({
-  label: tool.name,
-  href: tool.href,
-}));
 
 export function SiteHeader() {
-  const [openMenu, setOpenMenu] = useState<MenuKey>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setOpenMenu(null);
         setMobileMenuOpen(false);
       }
     };
@@ -74,208 +25,82 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-outline bg-panel/80 backdrop-blur">
-      <div className="container flex items-center justify-between gap-4 py-4">
-        <Link
-          href="/"
-          className="flex items-center"
-          aria-label="1031 Exchange of San Diego homepage"
-        >
-          <Image
-            src="/1031-exchange-of-san-diego-ca-logo.png"
-            alt="1031 Exchange of San Diego"
-            width={120}
-            height={120}
-            className="h-auto w-auto max-h-16 md:max-h-20"
-          />
+    <header className="sticky top-0 z-50 bg-[#0F2A3D]">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+        {/* Beautiful Logo */}
+        <Link href="/" className="flex items-center gap-3" aria-label="Home">
+          <div className="flex flex-col items-center leading-none">
+            <span className="text-white text-3xl font-thin tracking-[0.2em]">1031</span>
+            <div className="flex items-center gap-1.5">
+              <div className="h-[1px] w-4 bg-white/50" />
+              <span className="text-white/90 text-[10px] tracking-[0.3em] uppercase">Exchange</span>
+              <div className="h-[1px] w-4 bg-white/50" />
+            </div>
+          </div>
         </Link>
 
-        <button
-          type="button"
-          className="md:hidden flex flex-col gap-1.5 p-2 rounded-lg text-ink/80 hover:text-heading transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-          aria-label="Toggle mobile menu"
-          aria-expanded={mobileMenuOpen}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <span
-            className={`block h-0.5 w-6 bg-current transition-all ${
-              mobileMenuOpen ? "rotate-45 translate-y-2" : ""
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-current transition-all ${
-              mobileMenuOpen ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-current transition-all ${
-              mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          />
-        </button>
-
-        <nav
-          className={`${
-            mobileMenuOpen ? "flex" : "hidden"
-          } md:flex flex-col md:flex-row md:flex-1 md:items-center md:justify-end gap-4 text-sm absolute md:relative top-full left-0 right-0 md:top-auto md:left-auto md:right-auto bg-panel border-b md:border-b-0 border-outline md:bg-transparent p-4 md:p-0`}
-        >
-          <MenuButton
-            label="Services"
-            items={serviceMenu.map((service) => ({
-              label: service.name,
-              href: service.route,
-            }))}
-            openMenu={openMenu}
-            setOpenMenu={setOpenMenu}
-            menuKey="services"
-            viewAllHref="/services"
-            viewAllLabel={`View all ${servicesData.length} services`}
-            onItemClick={() => setMobileMenuOpen(false)}
-          />
-          <MenuButton
-            label="Service Areas"
-            items={locationMenu.map((location) => ({
-              label: location.name,
-              href: location.route,
-            }))}
-            openMenu={openMenu}
-            setOpenMenu={setOpenMenu}
-            menuKey="serviceAreas"
-            viewAllHref="/service-areas"
-            viewAllLabel={`View all ${locationsData.length} service areas`}
-            onItemClick={() => setMobileMenuOpen(false)}
-          />
-          <MenuButton
-            label="Tools"
-            items={toolMenu}
-            openMenu={openMenu}
-            setOpenMenu={setOpenMenu}
-            menuKey="tools"
-            viewAllHref="/tools"
-            viewAllLabel="View all tools"
-            onItemClick={() => setMobileMenuOpen(false)}
-          />
-          {primaryLinks.map((link) => (
+        {/* Desktop Navigation - Centered */}
+        <nav className="hidden lg:flex items-center gap-10">
+          {navLinks.map((link) => (
             <Link
-              key={link.href}
+              key={link.label}
               href={link.href}
-              className="text-ink/80 transition hover:text-heading py-2 md:py-0"
-              onClick={() => setMobileMenuOpen(false)}
+              className="text-white/90 text-sm font-medium hover:text-white transition"
             >
               {link.label}
             </Link>
           ))}
         </nav>
+
+        {/* Book a Meeting Button */}
+        <Link
+          href="/contact#contact-form"
+          className="hidden lg:inline-flex bg-transparent border border-white/30 text-white px-6 py-2.5 rounded text-sm font-medium hover:bg-white hover:text-[#0F2A3D] transition"
+        >
+          Book a Meeting
+        </Link>
+
+        {/* Mobile Menu Button */}
+        <button
+          type="button"
+          className="lg:hidden p-2 text-white"
+          aria-label="Toggle menu"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <nav className="lg:hidden bg-[#0F2A3D] border-t border-white/10 px-4 py-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="block text-white/90 py-3 text-sm font-medium hover:text-white transition"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            href="/contact#contact-form"
+            className="block mt-4 text-center bg-white text-[#0F2A3D] px-5 py-3 rounded text-sm font-medium"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Book a Meeting
+          </Link>
+        </nav>
+      )}
     </header>
   );
 }
-
-interface MenuButtonProps {
-  label: string;
-  items: { label: string; href: string }[];
-  openMenu: MenuKey;
-  setOpenMenu: (key: MenuKey) => void;
-  menuKey: Exclude<MenuKey, null>;
-  viewAllHref: string;
-  viewAllLabel: string;
-  onItemClick?: () => void;
-}
-
-function MenuButton({
-  label,
-  items,
-  openMenu,
-  setOpenMenu,
-  menuKey,
-  viewAllHref,
-  viewAllLabel,
-  onItemClick,
-}: MenuButtonProps) {
-  const isOpen = openMenu === menuKey;
-  const closeTimeout = useRef<NodeJS.Timeout | null>(null);
-
-  const handleOpen = () => {
-    if (closeTimeout.current) {
-      clearTimeout(closeTimeout.current);
-      closeTimeout.current = null;
-    }
-    setOpenMenu(menuKey);
-  };
-
-  const handleClose = () => {
-    if (closeTimeout.current) {
-      clearTimeout(closeTimeout.current);
-    }
-    closeTimeout.current = setTimeout(() => {
-      setOpenMenu(null);
-    }, 150);
-  };
-
-  const handleItemClick = () => {
-    if (closeTimeout.current) {
-      clearTimeout(closeTimeout.current);
-    }
-    setOpenMenu(null);
-    onItemClick?.();
-  };
-
-  return (
-    <div
-      className="relative"
-      onMouseEnter={handleOpen}
-      onMouseLeave={handleClose}
-      onBlur={(event) => {
-        const nextTarget = event.relatedTarget as Node | null;
-        if (!nextTarget || !event.currentTarget.contains(nextTarget)) {
-          setOpenMenu(null);
-        }
-      }}
-    >
-      <button
-        type="button"
-        className="flex items-center gap-1 rounded-full px-3 py-2 text-ink/80 transition hover:text-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary w-full md:w-auto justify-between md:justify-start"
-        aria-expanded={isOpen}
-        aria-haspopup="true"
-        onFocus={handleOpen}
-        onClick={() => {
-          if (isOpen) {
-            setOpenMenu(null);
-          } else {
-            handleOpen();
-          }
-        }}
-      >
-        {label}
-        <span aria-hidden="true" className="text-primary">
-          ▾
-        </span>
-      </button>
-      {isOpen ? (
-        <div className="absolute md:absolute left-0 right-0 md:right-auto md:min-w-[220px] mt-2 rounded-2xl border border-outline/40 bg-panel/90 p-4 shadow-xl z-50">
-          <ul className="space-y-2 text-sm">
-            {items.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="block rounded-lg px-2 py-1 text-ink/80 transition hover:bg-outline/20 hover:text-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                  onClick={handleItemClick}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Link
-            href={viewAllHref}
-            className="mt-3 inline-flex text-xs font-semibold uppercase tracking-wide text-primary hover:underline"
-            onClick={handleItemClick}
-          >
-            {viewAllLabel}
-          </Link>
-        </div>
-      ) : null}
-    </div>
-  );
-}
-

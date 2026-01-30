@@ -2,10 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import BottomCTA from "@/components/BottomCTA";
-import { Breadcrumbs } from "@/components/breadcrumbs";
 import site from "@/content/site.json";
 import {
-  inventoryCategories,
   inventorySpotlight01,
   locationsData,
   propertyTypesData,
@@ -13,29 +11,31 @@ import {
   servicesData,
 } from "@/data";
 import { ContactForm } from "@/components/contact-form";
-import { HomeServiceGroups } from "@/components/home/home-service-groups";
-import { HomeLocationGrid } from "@/components/home/home-location-grid";
 import { exchangeTools } from "@/data/tools";
 import { SITE_URL } from "@/lib/constants";
 
 const processSteps = [
   {
-    title: "45-Day war room",
+    number: "01",
+    title: "Discovery Call",
     detail:
       "We map net lease goals, credit preferences, yield targets, and DST vs. fee-simple tolerance within the first call.",
   },
   {
-    title: "Curated inventory drops",
+    number: "02",
+    title: "Curated Inventory",
     detail:
       "Daily NNN property alerts covering single tenant retail, sale leasebacks, ground leases, and zero cash flow plays in all 50 states.",
   },
   {
-    title: "Credit & lease diligence",
+    number: "03",
+    title: "Due Diligence",
     detail:
       "Underwrite rent coverage, tenant strength, assignment clauses, and escalations so you collect without day-to-day management.",
   },
   {
-    title: "Closing & handoff",
+    number: "04",
+    title: "Closing & Handoff",
     detail:
       "Coordinate QI, escrow, and vendor stack to keep funds qualified and the 180-day completion airtight.",
   },
@@ -64,19 +64,17 @@ const faqEntries = [
   },
 ];
 
-const serviceCategories = ["Timelines", "Execution", "Property Paths"] as const;
+// Show more spotlights for scrolling
+const featuredSpotlights = inventorySpotlight01;
 
-const featuredServices = serviceCategories.map((category) => ({
-  category,
-  items: servicesData
-    .filter((service) => service.category === category)
-    .slice(0, 4),
-}));
-
-const featuredPropertyTypes = propertyTypesData.slice(0, 8);
-const featuredSpotlights = inventorySpotlight01.slice(0, 4);
-const projectTypeOptions = servicesData.map((service) => service.name);
-const homeBreadcrumbs = [{ label: "Home", href: `${SITE_URL}/` }];
+// Stats data matching Unique Properties design
+const statsData = [
+  { number: "30+", label: "Years Combined Experience" },
+  { number: "500+", label: "Successful Exchanges" },
+  { number: "50", label: "States Covered" },
+  { number: "$2B+", label: "Transaction Volume" },
+  { number: "45", label: "Day Identification Period" },
+];
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -128,343 +126,416 @@ const faqSchema = {
 };
 
 export default function Home() {
-  const telHref = `tel:${site.phoneDigits}`;
-
   return (
     <>
-      <div className="bg-paper text-ink">
+      <div className="bg-white text-gray-700">
         <main>
-          <section className="border-b border-outline/40 bg-gradient-to-br from-panel via-panel/70 to-black" id="hero">
-            <div className="container mx-auto grid gap-10 py-16 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
-              <div className="lg:col-span-2">
-                <Breadcrumbs items={homeBreadcrumbs} />
-              </div>
-              <div className="space-y-6">
-                <p className="text-sm uppercase tracking-[0.35em] text-primary">
-                  Identify | Underwrite | Close
-                </p>
-                <h1 className="text-4xl font-semibold text-heading sm:text-5xl">
-                  Single tenant NNN replacement properties delivered fast for 1031 buyers.
-                </h1>
-                <p className="max-w-2xl text-lg text-ink/80">
-                  We help motivated exchange buyers lock the right single tenant retail, pharmacy, QSR,
-                  medical, and essential-service assets nationwide. Expect curated deal flow aligned with
-                  45/180-day timelines, credit requirements, and predictable income targets.
-                </p>
-                <ul className="flex flex-wrap gap-3 text-sm font-semibold text-primary">
-                  {[
-                    "Single tenant retail for sale",
-                    "NNN investment property for sale",
-                    "Net lease property listings",
-                    "1031 exchange NNN properties",
-                  ].map((keyword) => (
-                    <li
-                      key={keyword}
-                      className="rounded-full border border-primary/30 px-4 py-1 text-primaryfg/80 bg-primary/20"
-                    >
-                      {keyword}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap items-center gap-4">
-                  <Link
-                    href="#contact-form"
-                    className="rounded-full bg-primary px-6 py-3 text-base font-semibold text-primaryfg hover:opacity-90"
-                  >
-                    Get matched to NNN deals
-                  </Link>
-                  <a
-                    href="#process"
-                    className="rounded-full border border-outline px-6 py-3 text-base font-semibold text-heading hover:border-primary hover:text-primary"
-                  >
-                    See our 45/180 plan
-                  </a>
+          {/* Hero Section with Video Background - Fancy centered logo */}
+          <section className="relative h-[100vh] min-h-[700px]" id="hero">
+            {/* Video Background */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/san-diego-1031-hero.mp4" type="video/mp4" />
+            </video>
+
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black/30" />
+
+            {/* Centered Custom Fancy Logo */}
+            <div className="relative z-10 flex items-center justify-center h-full">
+              <div className="text-center">
+                {/* Fancy stylized logo like Unique Properties */}
+                <div className="mb-6">
+                  <span className="text-white text-8xl md:text-9xl font-thin tracking-[0.3em] uppercase">
+                    1031
+                  </span>
                 </div>
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  <div className="h-[1px] w-16 md:w-24 bg-white/60" />
+                  <span className="text-white text-xl md:text-2xl font-light tracking-[0.5em] uppercase">
+                    Exchange
+                  </span>
+                  <div className="h-[1px] w-16 md:w-24 bg-white/60" />
+                </div>
+                <p className="text-white/80 text-sm md:text-base tracking-[0.4em] uppercase">
+                  San Diego
+                </p>
               </div>
-              <div className="rounded-2xl border border-outline/50 bg-panel/60 p-6 shadow-2xl">
-                <div className="relative mb-6 overflow-hidden rounded-xl border border-outline/50">
-                  <Image
-                    src="/locations/san-diego-ca/hero.jpg"
-                    alt="San Diego skyline representing 1031 Exchange of San Diego"
-                    width={900}
-                    height={600}
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-sm text-white">
-                    50-state replacement property identification anchored in San Diego expertise.
+            </div>
+
+            {/* Scroll indicator */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+              <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2">
+                <div className="w-1 h-3 bg-white/70 rounded-full animate-bounce" />
+              </div>
+            </div>
+          </section>
+
+          {/* Stats Bar */}
+          <section className="bg-white py-12 border-b border-gray-100">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="flex flex-wrap justify-between items-center">
+                {statsData.map((stat) => (
+                  <div key={stat.label} className="text-center px-4 py-4 flex-1 min-w-[150px]">
+                    <p className="text-4xl md:text-5xl font-light text-[#0F2A3D] tracking-tight">
+                      {stat.number}
+                    </p>
+                    <p className="text-sm text-gray-500 mt-2">{stat.label}</p>
                   </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="inventory" className="container mx-auto border-b border-outline/30 py-16">
-            <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <p className="text-sm uppercase tracking-[0.35em] text-primary">Exchange Playbooks</p>
-                <h2 className="text-3xl font-semibold text-heading">Replacement property lanes we monitor daily</h2>
-                <p className="mt-3 max-w-2xl text-base text-ink/80">
-                  Align your exchange proceeds with fee-simple NNN, DST introductions, and credit-tenanted retail that matches your
-                  debt, yield, and lease-back requirements.
-                </p>
-              </div>
-              <Link href="/inventory/nnn" className="text-sm font-semibold text-primary">
-                Explore all inventory →
-              </Link>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              {inventoryCategories.map((category) => (
-                <article
-                  key={category.slug}
-                  className="rounded-2xl border border-outline/40 bg-panel/60 p-6 shadow-lg"
-                >
-                  <p className="text-xs uppercase tracking-wide text-ink/60">{category.slug}</p>
-                  <h3 className="mt-2 text-2xl font-semibold text-heading">{category.name}</h3>
-                  <p className="mt-3 text-sm text-ink/80">{category.note}</p>
-                  <Link
-                    href={category.route}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-                  >
-                    {category.name} listings
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="border-b border-outline/30 bg-panel/40 py-16">
-            <div className="container mx-auto">
-              <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.35em] text-primary">NNN Focus</p>
-                  <h2 className="text-3xl font-semibold text-heading">Deal flow across recession-resilient sectors</h2>
-                  <p className="mt-3 max-w-3xl text-base text-ink/80">
-                    From convenience gas, drive-thru QSR, and pharmacy to ground lease outparcels and last mile logistics,
-                    we curate single tenant net lease opportunities where the tenant handles taxes, insurance, and maintenance.
-                  </p>
-                </div>
-                <Link href="/property-types/convenience-store-gas" className="text-sm font-semibold text-primary">
-                  View property briefs →
-                </Link>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {featuredPropertyTypes.map((property) => (
-                  <Link
-                    key={property.slug}
-                    href={property.route}
-                    className="rounded-xl border border-outline/30 bg-paper/60 p-5 transition hover:border-primary hover:text-primary"
-                  >
-                    <p className="text-xs uppercase text-ink/60">Single tenant</p>
-                    <p className="mt-2 text-lg font-semibold text-heading">{property.name}</p>
-                    <p className="mt-2 text-sm text-ink/70">NNN · Credit tenants · Long-term leases</p>
-                  </Link>
                 ))}
               </div>
             </div>
           </section>
 
-          <section className="container mx-auto border-b border-outline/30 py-16">
-            <div className="mb-8">
-              <p className="text-sm uppercase tracking-[0.35em] text-primary">Featured Spotlights</p>
-              <h2 className="text-3xl font-semibold text-heading">Current net lease opportunities</h2>
-              <p className="mt-3 max-w-3xl text-base text-ink/80">
-                These highlights rotate weekly. Ask for the full list by sector, credit rating, lease term, and target yield.
-              </p>
-            </div>
-            <div className="grid gap-6 lg:grid-cols-2">
-              {featuredSpotlights.map((spotlight) => (
-                <article
-                  key={spotlight.type}
-                  className="rounded-2xl border border-outline/40 bg-panel/60 p-6 shadow-lg"
-                >
-                  <h3 className="text-2xl font-semibold text-heading">{spotlight.title}</h3>
-                  <p className="mt-3 text-sm text-ink/80">{spotlight.copy}</p>
-                  <div className="mt-4 flex flex-wrap gap-2 text-xs text-ink/60">
-                    <span className="rounded-full border border-outline px-3 py-1 uppercase tracking-wide">
-                      {spotlight.type.replace(/-/g, " ")}
-                    </span>
-                    <span className="rounded-full border border-outline px-3 py-1 uppercase tracking-wide">
-                      Triple Net
-                    </span>
-                  </div>
+          {/* Exclusive Property Types Section - More scrolling cards */}
+          <section className="bg-[#F8F9FA] py-20">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="grid lg:grid-cols-[350px_1fr] gap-12 items-start">
+                {/* Left Side - Title */}
+                <div className="lg:sticky lg:top-32">
+                  <h2 className="text-[#0F2A3D]">
+                    <span className="block text-5xl md:text-6xl font-light italic font-serif">Exclusive</span>
+                    <span className="block text-xl md:text-2xl font-normal mt-2 ml-4">Property Types</span>
+                  </h2>
+                  <p className="mt-8 text-gray-600 leading-relaxed">
+                    Discover our premium selection of investment properties tailored for 1031 exchange investors. From single tenant NNN to DST investments, these properties offer passive income and tax-deferred growth.
+                  </p>
                   <Link
-                    href={spotlight.href}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                    href="/property-types"
+                    className="inline-block mt-8 bg-[#0F2A3D] text-white px-8 py-4 rounded-lg text-sm font-medium hover:bg-[#1a3d54] transition"
                   >
-                    {spotlight.ctaLabel}
-                    <span aria-hidden="true">→</span>
+                    Explore All Properties
                   </Link>
-                  <p className="mt-4 text-xs text-ink/60">{spotlight.note}</p>
-                </article>
-              ))}
+                </div>
+
+                {/* Right Side - Scrolling Property Cards */}
+                <div className="flex gap-5 overflow-x-auto pb-4 -mr-4 pr-4 scroll-smooth">
+                  {featuredSpotlights.map((spotlight) => (
+                    <article
+                      key={spotlight.type}
+                      className="flex-shrink-0 w-[280px] bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition"
+                    >
+                      <div className="relative h-[200px]">
+                        <Image
+                          src={`/property-types/${spotlight.type}/hero.jpg`}
+                          alt={spotlight.title}
+                          fill
+                          className="object-cover"
+                        />
+                        <span className="absolute top-4 left-4 bg-white px-3 py-1.5 rounded-md text-xs font-medium text-[#0F2A3D]">
+                          {spotlight.type.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                        </span>
+                      </div>
+                      <div className="p-5">
+                        <p className="text-lg font-semibold text-[#0F2A3D]">
+                          {spotlight.title}
+                        </p>
+                        <p className="text-sm text-gray-500 mt-2 line-clamp-2">
+                          {spotlight.copy}
+                        </p>
+                        <div className="flex items-center gap-4 mt-4 text-xs text-gray-400">
+                          <span className="flex items-center gap-1">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            Nationwide
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                  {/* Add property types to fill more scrolling */}
+                  {propertyTypesData.map((property) => (
+                    <article
+                      key={property.slug}
+                      className="flex-shrink-0 w-[280px] bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition"
+                    >
+                      <div className="relative h-[200px]">
+                        <Image
+                          src={`/property-types/${property.slug}/hero.jpg`}
+                          alt={property.name}
+                          fill
+                          className="object-cover"
+                        />
+                        <span className="absolute top-4 left-4 bg-white px-3 py-1.5 rounded-md text-xs font-medium text-[#0F2A3D]">
+                          {property.name}
+                        </span>
+                      </div>
+                      <div className="p-5">
+                        <p className="text-lg font-semibold text-[#0F2A3D]">
+                          {property.name}
+                        </p>
+                        <p className="text-sm text-gray-500 mt-2 line-clamp-2">
+                          {property.summary || `Explore ${property.name} investment opportunities for your 1031 exchange.`}
+                        </p>
+                        <Link
+                          href={property.route}
+                          className="inline-flex items-center gap-2 mt-4 text-xs font-medium text-[#0F2A3D] hover:underline"
+                        >
+                          Learn more
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
 
-          <section id="process" className="border-b border-outline/30 bg-panel/20 py-16">
-            <div className="container mx-auto">
-              <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.35em] text-primary">Process</p>
-                  <h2 className="text-3xl font-semibold text-heading">How we protect every exchange milestone</h2>
-                  <p className="mt-3 max-w-3xl text-base text-ink/80">
-                    Built for unrepresented exchange buyers who need speed, clarity, and fully-baked recommendations.
-                  </p>
-                </div>
-                <a href={telHref} className="text-sm font-semibold text-primary">
-                  Schedule a 12-minute intake call →
-                </a>
+          {/* Services Section - Text only, 2 rows of 3 */}
+          <section className="bg-white py-20">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="text-center mb-14">
+                <h2 className="text-4xl md:text-5xl font-light text-[#0F2A3D]">Our Services</h2>
+                <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+                  Comprehensive 1031 exchange support from identification to closing
+                </p>
               </div>
-              <div className="grid gap-6 md:grid-cols-2">
-                {processSteps.map((step, index) => (
-                  <article key={step.title} className="rounded-2xl border border-outline/40 bg-paper/70 p-6">
-                    <p className="text-sm font-semibold text-primary">Step {index + 1}</p>
-                    <h3 className="mt-2 text-2xl font-semibold text-heading">{step.title}</h3>
-                    <p className="mt-3 text-sm text-ink/80">{step.detail}</p>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {servicesData.slice(0, 6).map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={service.route}
+                    className="group bg-[#F8F9FA] hover:bg-[#0F2A3D] rounded-xl p-8 transition-all duration-300"
+                  >
+                    <h3 className="text-xl font-semibold text-[#0F2A3D] group-hover:text-white transition-colors">
+                      {service.name}
+                    </h3>
+                    <p className="mt-3 text-sm text-gray-600 group-hover:text-white/80 transition-colors line-clamp-3">
+                      {service.description || `Expert guidance for ${service.name.toLowerCase()} transactions and strategies.`}
+                    </p>
+                    <div className="mt-6 flex items-center gap-2 text-sm font-medium text-[#0F2A3D] group-hover:text-white transition-colors">
+                      Learn more
+                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <div className="text-center mt-12">
+                <Link
+                  href="/services"
+                  className="inline-block bg-[#0F2A3D] text-white px-10 py-4 rounded-lg text-sm font-medium hover:bg-[#1a3d54] transition"
+                >
+                  Explore All Services
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Communities Section - Names under photos, auto-scroll to right */}
+          <section className="bg-[#F8F9FA] py-20 overflow-hidden">
+            <div className="px-4">
+              <h2 className="text-4xl md:text-5xl font-light text-[#0F2A3D] text-center mb-14 max-w-7xl mx-auto">
+                Discover San Diego&apos;s Best Communities
+              </h2>
+              {/* Auto-scrolling marquee container */}
+              <div className="relative w-full overflow-hidden">
+                <div className="flex gap-6 animate-marquee">
+                  {/* First set of locations */}
+                  {locationsData.map((location) => (
+                    <Link
+                      key={location.slug}
+                      href={location.route}
+                      className="group flex-shrink-0 w-[300px]"
+                    >
+                      <div className="relative h-[250px] rounded-xl overflow-hidden">
+                        <Image
+                          src={`/locations/${location.slug}/hero.jpg`}
+                          alt={location.name}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                          <svg className="w-5 h-5 text-[#0F2A3D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </div>
+                      <p className="mt-4 text-center text-lg font-medium text-[#0F2A3D]">
+                        {location.name}
+                      </p>
+                    </Link>
+                  ))}
+                  {/* Duplicate set for seamless infinite loop */}
+                  {locationsData.map((location) => (
+                    <Link
+                      key={`${location.slug}-dup`}
+                      href={location.route}
+                      className="group flex-shrink-0 w-[300px]"
+                    >
+                      <div className="relative h-[250px] rounded-xl overflow-hidden">
+                        <Image
+                          src={`/locations/${location.slug}/hero.jpg`}
+                          alt={location.name}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                          <svg className="w-5 h-5 text-[#0F2A3D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </div>
+                      <p className="mt-4 text-center text-lg font-medium text-[#0F2A3D]">
+                        {location.name}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div className="text-center mt-12">
+                <Link
+                  href="/service-areas"
+                  className="inline-block bg-[#0F2A3D] text-white px-10 py-4 rounded-lg text-sm font-medium hover:bg-[#1a3d54] transition"
+                >
+                  Explore All Areas
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Our Story Section - Fixed for 1031 San Diego */}
+          <section className="bg-[#0F2A3D] py-24">
+            <div className="max-w-4xl mx-auto px-4 text-center">
+              <p className="text-sm uppercase tracking-[0.3em] text-white/50 mb-6">About Us</p>
+              <h2 className="text-4xl md:text-5xl font-light text-white mb-10">Our Story</h2>
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
+                1031 Exchange of San Diego was founded to help real estate investors navigate the complexities of tax-deferred exchanges. With decades of combined experience in commercial real estate and 1031 transactions, our team has facilitated over 500 successful exchanges totaling more than $2 billion in transaction volume.
+              </p>
+              <p className="text-lg text-white/70 leading-relaxed">
+                We specialize in identifying high-quality replacement properties across all 50 states, coordinating with qualified intermediaries, and ensuring your exchange meets all IRS requirements. Our mission is to protect your 45-day identification deadline while finding properties that match your investment goals.
+              </p>
+              <Link
+                href="/about"
+                className="inline-block mt-12 bg-white text-[#0F2A3D] px-10 py-4 rounded-lg text-sm font-medium hover:bg-gray-100 transition"
+              >
+                Read More About Us
+              </Link>
+            </div>
+          </section>
+
+          {/* How We Work Section - Clean styling with large numbers only */}
+          <section className="bg-white py-24">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="text-center mb-16">
+                <p className="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Process</p>
+                <h2 className="text-4xl md:text-5xl font-light text-[#0F2A3D]">How We Work</h2>
+                <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
+                  A streamlined approach built for serious exchange buyers who need speed, clarity, and fully-baked recommendations.
+                </p>
+              </div>
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                {processSteps.map((step) => (
+                  <article
+                    key={step.title}
+                    className="relative bg-[#F8F9FA] rounded-2xl p-8 hover:shadow-lg transition-shadow group"
+                  >
+                    {/* Large step number only - no blue button */}
+                    <span className="text-8xl font-thin text-[#0F2A3D]/15 absolute top-2 right-4 group-hover:text-[#0F2A3D]/25 transition-colors">
+                      {step.number}
+                    </span>
+                    <div className="relative z-10 pt-8">
+                      <h3 className="text-xl font-semibold text-[#0F2A3D] mb-4">{step.title}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{step.detail}</p>
+                    </div>
                   </article>
                 ))}
               </div>
             </div>
           </section>
 
-          <section id="services" className="container mx-auto border-b border-outline/30 py-16">
-            <div className="mb-8">
-              <p className="text-sm uppercase tracking-[0.35em] text-primary">Services</p>
-              <h2 className="text-3xl font-semibold text-heading">Advisory built for serious exchange buyers</h2>
-              <p className="mt-3 max-w-3xl text-base text-ink/80">
-                Use our team as an extension of your QI, attorney, and broker relationships to keep documentation, inspections,
-                and lender deliverables synchronized.
-              </p>
-            </div>
-            <HomeServiceGroups groups={featuredServices} />
-          </section>
-
-          <section id="locations" className="border-b border-outline/30 bg-panel/10 py-16">
-            <div className="container mx-auto">
-              <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.35em] text-primary">Markets</p>
-                  <h2 className="text-3xl font-semibold text-heading">San Diego roots. All 50 states covered.</h2>
-                  <p className="mt-3 max-w-3xl text-base text-ink/80">
-                    From La Jolla trophy corners to remote tertiary targets, we maintain net lease watchlists with cap rate,
-                    lease term, and credit-grade notes so your identification list is bulletproof.
-                  </p>
-                </div>
+          {/* Tools Section */}
+          <section className="bg-[#F8F9FA] py-20">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-light text-[#0F2A3D]">Interactive Tools</h2>
+                <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+                  Run real-time calculations for boot exposure, transaction costs, and identification rule compliance.
+                </p>
               </div>
-              <HomeLocationGrid locations={locationsData} />
-            </div>
-          </section>
-
-          <section id="education" className="container mx-auto border-b border-outline/30 py-16">
-            <div className="rounded-3xl border border-outline/40 bg-gradient-to-br from-panel via-panel/60 to-black p-8">
-              <p className="text-sm uppercase tracking-[0.35em] text-primary">Education & SEO</p>
-              <h2 className="mt-4 text-3xl font-semibold text-heading">
-                Clarity on NNN structures, sale leasebacks, ground leases, and zero cash flow options.
-              </h2>
-              <div className="mt-6 space-y-4 text-base text-ink/80">
-                <p>
-                  We translate IRS rules, NAVBoost-era helpful content guidance, and the latest Hobo Technical SEO frameworks
-                  into plain language so exchange buyers can make confident decisions. Every property brief includes rent rolls,
-                  maintenance responsibilities, credit snapshots, and downside notes so you understand both upside and risk.
-                </p>
-                <p>
-                  Looking at single tenant retail for sale with national convenience brands? Need a sale leaseback to redeploy
-                  proceeds while keeping operations? Curious about ground lease outparcels, corporate guarantees, or zero cash
-                  flow vehicles to balance debt? We document each structure, highlight tax touchpoints, and provide direct paths
-                  to qualified providers when securities are involved.
-                </p>
-                <p>
-                  Our content hub doubles as an SEO moat—rich headlines, structured data, and authoritative outbound links (IRS,
-                  Rev Proc 2008-16, California transfer tax resources) prove experience, expertise, authority, and trust so both
-                  investors and search engines know they are in the right place.
-                </p>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {exchangeTools.map((tool) => (
+                  <Link
+                    key={tool.slug}
+                    href={tool.href}
+                    className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition"
+                  >
+                    <tool.icon className="mb-4 h-12 w-12 text-[#0F2A3D]" />
+                    <h3 className="text-xl font-semibold text-[#0F2A3D] group-hover:text-[#1a3d54] transition">{tool.name}</h3>
+                    <p className="mt-2 text-sm text-gray-600">{tool.shortDescription}</p>
+                    <p className="mt-4 text-sm font-semibold text-[#0F2A3D]">Launch tool →</p>
+                  </Link>
+                ))}
               </div>
             </div>
           </section>
 
-          <section className="container mx-auto border-b border-outline/30 py-16">
-            <ContactForm
-              projectTypeOptions={projectTypeOptions}
-              subheading="We focus on identifying 1031 exchange properties, coordinating secure intake, and syncing with Qualified Intermediaries and lenders. We are not a Qualified Intermediary."
-            />
-          </section>
-
-          <section id="resources" className="container mx-auto border-b border-outline/30 py-16">
-            <div className="mb-8">
-              <p className="text-sm uppercase tracking-[0.35em] text-primary">Resources</p>
-              <h2 className="text-3xl font-semibold text-heading">Reference documents & compliance</h2>
-              <p className="mt-3 max-w-3xl text-base text-ink/80">
-                Bookmark these official resources for ongoing diligence. We align every exchange plan with the IRS and local
-                jurisdiction guidelines referenced below.
-              </p>
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              {resources.map((resource) => (
-                <a
-                  key={resource.key}
-                  href={resource.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-2xl border border-outline/40 bg-panel/60 p-5 transition hover:border-primary hover:text-primary"
-                >
-                  <p className="text-lg font-semibold text-heading">{resource.label}</p>
-                  <p className="mt-2 text-sm text-ink/60">{resource.href}</p>
-                </a>
-              ))}
+          {/* Contact Form Section */}
+          <section className="bg-white py-20">
+            <div className="max-w-4xl mx-auto px-4">
+              <ContactForm
+                subheading="We focus on identifying 1031 exchange properties, coordinating secure intake, and syncing with Qualified Intermediaries and lenders. We are not a Qualified Intermediary."
+              />
             </div>
           </section>
 
-          <section id="tools" className="container mx-auto border-b border-outline/30 py-16">
-            <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <p className="text-sm uppercase tracking-[0.35em] text-primary">Interactive Tools</p>
-                <h2 className="text-3xl font-semibold text-heading">
-                  Calculators that keep your 1031 exchange on track
-                </h2>
-                <p className="mt-3 max-w-2xl text-base text-ink/80">
-                  Run real-time calculations for boot exposure, transaction costs, and identification rule compliance. Each tool
-                  mirrors the design system on this site and uses our San Diego dataset.
+          {/* Resources Section */}
+          <section className="bg-[#F8F9FA] py-20">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-light text-[#0F2A3D]">Resources</h2>
+                <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+                  Bookmark these official resources for ongoing diligence.
                 </p>
               </div>
-              <Link href="/tools" className="text-sm font-semibold text-primary">
-                View all tools →
-              </Link>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {exchangeTools.map((tool) => (
-                <Link
-                  key={tool.slug}
-                  href={tool.href}
-                  className="group rounded-2xl border border-gray-200 bg-gradient-to-br from-[#0B3C5D] to-[#16486C] p-6 text-white shadow-lg transition hover:-translate-y-1 hover:shadow-2xl"
-                >
-                  <tool.icon className="mb-4 h-12 w-12 text-[#C9A227]" />
-                  <h3 className="text-2xl font-semibold text-white">{tool.name}</h3>
-                  <p className="mt-2 text-sm text-white/80">{tool.shortDescription}</p>
-                  <p className="mt-4 text-sm font-semibold text-[#C9A227]">Launch tool →</p>
-                </Link>
-              ))}
+              <div className="grid gap-4 md:grid-cols-2">
+                {resources.map((resource) => (
+                  <a
+                    key={resource.key}
+                    href={resource.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="bg-white rounded-xl p-6 hover:shadow-md transition"
+                  >
+                    <p className="text-lg font-semibold text-[#0F2A3D]">{resource.label}</p>
+                    <p className="mt-2 text-sm text-gray-400 truncate">{resource.href}</p>
+                  </a>
+                ))}
+              </div>
             </div>
           </section>
 
-          <section id="faq" className="container mx-auto py-16">
-            <div className="mb-8">
-              <p className="text-sm uppercase tracking-[0.35em] text-primary">FAQ</p>
-              <h2 className="text-3xl font-semibold text-heading">Investor questions we answer daily</h2>
-            </div>
-            <div className="space-y-4">
-              {faqEntries.map((faq) => (
-                <details
-                  key={faq.question}
-                  className="group rounded-2xl border border-outline/40 bg-panel/60 p-6"
-                >
-                  <summary className="flex cursor-pointer items-center justify-between text-lg font-semibold text-heading">
-                    {faq.question}
-                    <span className="text-primary transition group-open:rotate-45">+</span>
-                  </summary>
-                  <p className="mt-4 text-sm text-ink/80">{faq.answer}</p>
-                </details>
-              ))}
+          {/* FAQ Section */}
+          <section className="bg-white py-20">
+            <div className="max-w-3xl mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-light text-[#0F2A3D]">FAQ</h2>
+                <p className="mt-4 text-gray-600">Investor questions we answer daily</p>
+              </div>
+              <div className="space-y-4">
+                {faqEntries.map((faq) => (
+                  <details
+                    key={faq.question}
+                    className="group bg-[#F8F9FA] rounded-xl p-6"
+                  >
+                    <summary className="flex cursor-pointer items-center justify-between text-lg font-semibold text-[#0F2A3D]">
+                      {faq.question}
+                      <span className="text-[#0F2A3D] transition group-open:rotate-45 text-2xl font-light">+</span>
+                    </summary>
+                    <p className="mt-4 text-gray-600">{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
             </div>
           </section>
         </main>

@@ -42,13 +42,13 @@ export function HomeLocationGrid({ locations }: HomeLocationGridProps) {
         onSubmit={setQuery}
       />
       {filtered.length === 0 ? (
-        <div className="rounded-2xl border border-outline/40 bg-panel/50 p-5 text-sm text-ink/70">
-          We can help with “{query}”.{" "}
+        <div className="rounded-xl border border-outline bg-secondary p-5 text-sm text-ink/70">
+          We can help with "{query}".{" "}
           <Link
             href={`/contact?projectType=${encodeURIComponent("Other")}`}
             className="text-primary hover:underline"
           >
-            Contact us and we will assign “Other” as your project type.
+            Contact us and we will assign "Other" as your project type.
           </Link>
         </div>
       ) : (
@@ -57,9 +57,9 @@ export function HomeLocationGrid({ locations }: HomeLocationGridProps) {
             <Link
               key={location.slug}
               href={location.route}
-              className="rounded-xl border border-outline/30 bg-paper/50 p-5 transition hover:border-primary hover:text-primary"
+              className="rounded-xl border border-outline bg-white p-5 shadow-sm transition hover:shadow-md hover:border-primary"
             >
-              <p className="text-xs uppercase text-ink/60">{location.type}</p>
+              <p className="text-xs uppercase text-muted">{location.type}</p>
               <p className="mt-2 text-xl font-semibold text-heading">
                 {location.name}
               </p>
@@ -73,13 +73,13 @@ export function HomeLocationGrid({ locations }: HomeLocationGridProps) {
       <div className="flex flex-wrap items-center gap-3">
         <Link
           href="/service-areas"
-          className="rounded-full border border-outline px-5 py-2 text-sm font-semibold text-heading transition hover:border-primary hover:text-primary"
+          className="rounded-full border border-panel px-6 py-2.5 text-sm font-semibold text-heading transition hover:bg-panel hover:text-white"
         >
           View all {locations.length} service areas
         </Link>
         <Link
           href="/contact?projectType=Other"
-          className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primaryfg transition hover:opacity-90"
+          className="rounded-full bg-panel px-6 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
         >
           Contact about Other markets
         </Link>
@@ -87,4 +87,3 @@ export function HomeLocationGrid({ locations }: HomeLocationGridProps) {
     </div>
   );
 }
-

@@ -272,8 +272,6 @@ export default async function PropertyTypePage({
             <ContactForm
               heading={`Discuss ${propertyType.name} opportunities`}
               subheading="Share your target cap rate, timeline, and tenant profile. We will prioritize matching this property type inside your 45-day window."
-              initialProjectType={propertyType.name}
-              projectTypeOptions={projectTypeOptions}
             />
           </section>
         </section>

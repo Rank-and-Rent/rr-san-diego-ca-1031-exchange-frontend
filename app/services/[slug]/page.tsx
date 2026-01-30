@@ -194,8 +194,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
         <section id="service-contact">
           <ContactForm
-            initialProjectType={service.name}
-            projectTypeOptions={projectTypeOptions}
             subheading={`We focus on matching ${service.name.toLowerCase()} opportunities across all 50 states while coordinating with Qualified Intermediaries and lenders. We are not a Qualified Intermediary.`}
           />
         </section>

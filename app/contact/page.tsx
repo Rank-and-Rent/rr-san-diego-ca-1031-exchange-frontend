@@ -84,8 +84,6 @@ export default function ContactPage({
       <section className="container grid gap-8 py-12 lg:grid-cols-[1.2fr,0.8fr]">
         <ContactForm
           id="contact-form"
-          projectTypeOptions={projectTypeOptions}
-          initialProjectType={initialProjectType}
           subheading="Share your details below. We coordinate secure intake, property matching, and communication with Qualified Intermediaries, tax advisors, and lenders."
         />
         <div className="rounded-3xl border border-outline/40 bg-panel/50 p-6">
