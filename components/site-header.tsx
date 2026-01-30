@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "About Us", href: "/about" },
@@ -13,6 +14,11 @@ const navLinks = [
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Check if we're on homepage
+  const isHomepage = pathname === "/";
 
   useEffect(() => {
     const handleKey = (event: KeyboardEvent) => {
@@ -24,83 +30,155 @@ export function SiteHeader() {
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
+  const headerBg = isHomepage && !scrolled
+    ? "bg-transparent"
+    : "bg-[#0F2A3D]";
+
   return (
-    <header className="sticky top-0 z-50 bg-[#0F2A3D]">
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
-        {/* Beautiful Logo */}
-        <Link href="/" className="flex items-center gap-3" aria-label="Home">
-          <div className="flex flex-col items-center leading-none">
-            <span className="text-white text-3xl font-thin tracking-[0.2em]">1031</span>
-            <div className="flex items-center gap-1.5">
-              <div className="h-[1px] w-4 bg-white/50" />
-              <span className="text-white/90 text-[10px] tracking-[0.3em] uppercase">Exchange</span>
-              <div className="h-[1px] w-4 bg-white/50" />
+    <>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg}`}>
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+          {/* Logo - 1031 SD */}
+          <Link href="/" className="flex items-center gap-2" aria-label="Home">
+            <span className="text-white text-3xl md:text-4xl font-thin tracking-[0.1em]">1031</span>
+            <span className="text-white/80 text-xl md:text-2xl font-light tracking-wide">SD</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`text-sm font-medium transition ${
+                  pathname === link.href || pathname.startsWith(link.href + '/')
+                    ? 'text-white'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Empty div for desktop balance */}
+          <div className="hidden lg:block w-[100px]" />
+
+          {/* Mobile Hamburger Button - ALWAYS VISIBLE on mobile */}
+          <button
+            type="button"
+            className="flex lg:hidden p-3 -mr-3 text-white touch-manipulation z-50"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <div className="w-7 h-6 relative flex flex-col justify-between">
+              <span
+                className={`block h-0.5 w-7 bg-white transform transition-all duration-300 origin-center ${
+                  mobileMenuOpen ? 'rotate-45 translate-y-[11px]' : ''
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-7 bg-white transition-all duration-300 ${
+                  mobileMenuOpen ? 'opacity-0 scale-0' : ''
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-7 bg-white transform transition-all duration-300 origin-center ${
+                  mobileMenuOpen ? '-rotate-45 -translate-y-[11px]' : ''
+                }`}
+              />
             </div>
-          </div>
-        </Link>
+          </button>
+        </div>
+      </header>
 
-        {/* Desktop Navigation - Centered */}
-        <nav className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-white/90 text-sm font-medium hover:text-white transition"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
+          mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          onClick={() => setMobileMenuOpen(false)}
+        />
 
-        {/* Book a Meeting Button */}
-        <Link
-          href="/contact#contact-form"
-          className="hidden lg:inline-flex bg-transparent border border-white/30 text-white px-6 py-2.5 rounded text-sm font-medium hover:bg-white hover:text-[#0F2A3D] transition"
+        {/* Menu Panel */}
+        <nav
+          className={`absolute top-0 right-0 w-full max-w-[320px] h-full bg-[#0F2A3D] shadow-2xl transform transition-transform duration-300 ease-out ${
+            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
         >
-          Book a Meeting
-        </Link>
-
-        {/* Mobile Menu Button */}
-        <button
-          type="button"
-          className="lg:hidden p-2 text-white"
-          aria-label="Toggle menu"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <nav className="lg:hidden bg-[#0F2A3D] border-t border-white/10 px-4 py-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="block text-white/90 py-3 text-sm font-medium hover:text-white transition"
+          {/* Close button area */}
+          <div className="h-20 flex items-center justify-end px-4">
+            <button
+              type="button"
+              className="p-3 text-white touch-manipulation"
+              aria-label="Close menu"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="/contact#contact-form"
-            className="block mt-4 text-center bg-white text-[#0F2A3D] px-5 py-3 rounded text-sm font-medium"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Book a Meeting
-          </Link>
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="px-6 py-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`block py-5 text-xl font-light border-b border-white/10 transition ${
+                  pathname === link.href || pathname.startsWith(link.href + '/')
+                    ? 'text-white'
+                    : 'text-white/80 hover:text-white'
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Contact Info */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-white/10">
+            <p className="text-white/50 text-sm mb-3">Get in touch</p>
+            <a href="tel:+18585551031" className="block text-white text-lg mb-2 hover:text-white/80">(858) 555-1031</a>
+            <a href="mailto:info@1031sandiego.com" className="block text-white/70 text-sm hover:text-white">info@1031sandiego.com</a>
+          </div>
         </nav>
-      )}
-    </header>
+      </div>
+    </>
   );
 }

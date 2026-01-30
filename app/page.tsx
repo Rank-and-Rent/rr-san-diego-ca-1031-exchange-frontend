@@ -213,56 +213,21 @@ export default function Home() {
                   </Link>
                 </div>
 
-                {/* Right Side - Scrolling Property Cards */}
+                {/* Right Side - Scrolling Property Cards - No text overlay on photos */}
                 <div className="flex gap-5 overflow-x-auto pb-4 -mr-4 pr-4 scroll-smooth">
-                  {featuredSpotlights.map((spotlight) => (
-                    <article
-                      key={spotlight.type}
-                      className="flex-shrink-0 w-[280px] bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition"
-                    >
-                      <div className="relative h-[200px]">
-                        <Image
-                          src={`/property-types/${spotlight.type}/hero.jpg`}
-                          alt={spotlight.title}
-                          fill
-                          className="object-cover"
-                        />
-                        <span className="absolute top-4 left-4 bg-white px-3 py-1.5 rounded-md text-xs font-medium text-[#0F2A3D]">
-                          {spotlight.type.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                        </span>
-                      </div>
-                      <div className="p-5">
-                        <p className="text-lg font-semibold text-[#0F2A3D]">
-                          {spotlight.title}
-                        </p>
-                        <p className="text-sm text-gray-500 mt-2 line-clamp-2">
-                          {spotlight.copy}
-                        </p>
-                        <div className="flex items-center gap-4 mt-4 text-xs text-gray-400">
-                          <span className="flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                            Nationwide
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  ))}
-                  {/* Add property types to fill more scrolling */}
                   {propertyTypesData.map((property) => (
-                    <article
+                    <Link
                       key={property.slug}
-                      className="flex-shrink-0 w-[280px] bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition"
+                      href={property.route}
+                      className="flex-shrink-0 w-[280px] bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition group"
                     >
                       <div className="relative h-[200px]">
                         <Image
                           src={`/property-types/${property.slug}/hero.jpg`}
                           alt={property.name}
                           fill
-                          className="object-cover"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                        <span className="absolute top-4 left-4 bg-white px-3 py-1.5 rounded-md text-xs font-medium text-[#0F2A3D]">
-                          {property.name}
-                        </span>
                       </div>
                       <div className="p-5">
                         <p className="text-lg font-semibold text-[#0F2A3D]">
@@ -271,17 +236,14 @@ export default function Home() {
                         <p className="text-sm text-gray-500 mt-2 line-clamp-2">
                           {property.summary || `Explore ${property.name} investment opportunities for your 1031 exchange.`}
                         </p>
-                        <Link
-                          href={property.route}
-                          className="inline-flex items-center gap-2 mt-4 text-xs font-medium text-[#0F2A3D] hover:underline"
-                        >
+                        <span className="inline-flex items-center gap-2 mt-4 text-xs font-medium text-[#0F2A3D] group-hover:gap-3 transition-all">
                           Learn more
                           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
-                        </Link>
+                        </span>
                       </div>
-                    </article>
+                    </Link>
                   ))}
                 </div>
               </div>

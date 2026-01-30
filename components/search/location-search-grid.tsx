@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import type { LocationItem } from "@/data/types";
 import { QueryInput } from "@/components/search/query-input";
@@ -14,7 +15,7 @@ interface LocationSearchGridProps {
 export function LocationSearchGrid({
   locations,
   limit,
-  emptyRedirectLabel = "Contact intake",
+  emptyRedirectLabel = "Contact Us",
 }: LocationSearchGridProps) {
   const [query, setQuery] = useState("");
 
@@ -38,7 +39,7 @@ export function LocationSearchGrid({
   }, [locations, limit, query]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <QueryInput
         label="Search service areas"
         placeholder="Example: La Jolla, Poway, Oceanside"
@@ -46,45 +47,60 @@ export function LocationSearchGrid({
         onSubmit={(value) => setQuery(value)}
       />
       {filtered.length === 0 ? (
-        <div className="rounded-2xl border border-outline/40 bg-panel/50 p-6 text-center">
-          <p className="text-lg font-semibold text-heading">
+        <div className="rounded-2xl border border-[#0F2A3D]/10 bg-white p-8 text-center">
+          <p className="text-lg font-medium text-[#0F2A3D] mb-2">
             Need a different market?
           </p>
-          <p className="mt-2 text-sm text-ink/70">
+          <p className="text-[#0F2A3D]/60 mb-4">
             We will connect you with an advisor and prefill your request.
           </p>
           <Link
             href={`/contact?projectType=${encodeURIComponent(query || "Other")}`}
-            className="mt-4 inline-flex rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primaryfg transition hover:opacity-90"
+            className="inline-block bg-[#0F2A3D] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#1a3d54] transition"
           >
             {emptyRedirectLabel}
           </Link>
         </div>
       ) : (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filtered.map((location) => (
-            <article
+            <Link
               key={location.slug}
-              className="rounded-2xl border border-outline/40 bg-panel/50 p-5 shadow-lg"
+              href={location.route}
+              className="group block bg-white rounded-2xl overflow-hidden border border-[#0F2A3D]/10 hover:border-[#0F2A3D]/30 hover:shadow-xl transition-all duration-300"
             >
-              <p className="text-xs uppercase tracking-wide text-ink/60">
-                {location.type}
-              </p>
-              <h3 className="mt-2 text-xl font-semibold text-heading">
-                {location.name}
-              </h3>
-              <p className="mt-2 text-sm text-ink/70">{location.description}</p>
-              <Link
-                href={location.route}
-                className="mt-4 inline-flex text-sm font-semibold text-primary hover:underline"
-              >
-                Open service area →
-              </Link>
-            </article>
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={location.heroImage}
+                  alt={location.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F2A3D]/70 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-xs uppercase tracking-wider text-white/70 mb-1">
+                    {location.type}
+                  </p>
+                  <h3 className="text-xl font-semibold text-white">
+                    {location.name}
+                  </h3>
+                </div>
+              </div>
+              <div className="p-5">
+                <p className="text-sm text-[#0F2A3D]/70 mb-4 line-clamp-2">
+                  {location.description}
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-medium text-[#0F2A3D] group-hover:gap-3 transition-all">
+                  Explore {location.name}
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
       )}
     </div>
   );
 }
-
